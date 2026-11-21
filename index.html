@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Armel Kanhonou · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* VOICE: professionnel et posé, sur le modèle d'un portfolio de statisticien en cartes.
+   IDEA: une fiche de présentation en sections-cartes, avec un atlas des lieux d'intervention.
+   PICTURE: bandeau d'en-tête avec photo cerclée, puis le globe interactif dans la carte « Interventions ».
+   COLOUR and TYPE: sarcelle douce #2d5c63 dominante, sable #d4b483 en accent, fond brume #f2f6f6 ; Inter partout, JetBrains Mono pour le code.
+   LAYOUT: en-tête, barre de navigation en pilule, cartes empilées : profil, interventions, expériences, méthodes, compétences, formation, engagement, contact. */
+:root{color-scheme:light dark;
+--bg:light-dark(#f2f6f6,#0e1618);--card:light-dark(#ffffff,#152024);--ink:light-dark(#14262b,#e3ecee);--soft:light-dark(#3d555c,#a9bec2);--mut:light-dark(#5f757b,#8fa5aa);
+--line:light-dark(#e1e9ea,#24353a);--tint:light-dark(#f4f8f8,#1a282c);--tint2:light-dark(#e7f0f0,#1f3135);
+--primary:light-dark(#2d5c63,#8cc3c3);--primary2:light-dark(#4f8a8f,#6aa7a9);--accent:#d4b483;--accentsoft:light-dark(#f6edde,#3a3326);
+--hero1:#24494f;--hero2:#3f7a80;--pin:#d9886c;
+--sea:light-dark(#e6eff1,#17262b);--sea2:light-dark(#d2e2e7,#1d3036);--land:light-dark(#cbdad4,#2e4248);--hit:light-dark(#8fbcb3,#4f8a86);--grat:light-dark(#c5d6db88,#ffffff14);
+--codebg:light-dark(#f3f7f7,#0b1214)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,h4{margin:0;line-height:1.15;text-wrap:balance}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+html{scroll-padding-top:90px;scroll-behavior:smooth}pre{overflow-x:auto}code{overflow-wrap:anywhere}
+.ic{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.container{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:52px 0 76px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:-35%;right:-8%;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,#d4b48326,transparent 70%);pointer-events:none}
+.hero-content{display:flex;align-items:center;gap:40px;flex-wrap:nowrap;position:relative;z-index:1}
+.hero-content>div{flex:1}.avatar{flex:none;width:168px;height:168px;border-radius:50%;border:4px solid var(--accent);object-fit:cover;background:#fff;box-shadow:0 18px 30px -10px #0008}
+.hero h1{font-size:clamp(32px,4.4vw,46px);font-weight:800;letter-spacing:-.02em}
+.sub{font-size:19px;font-weight:500;color:#f3e3c4;margin:8px 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hero p{margin:6px 0 0;color:#d9ebec;max-width:62ch}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#ffffff1c;border:1px solid #ffffff30;padding:7px 14px;border-radius:40px;font-size:14px;font-weight:500}
+.chip .ic{color:var(--accent)}
+.navwrap{display:flex;justify-content:center;margin-top:-30px;position:sticky;top:10px;z-index:30;padding:0 12px}
+.nav{background:var(--card);border:1px solid var(--line);border-radius:70px;padding:8px 18px;display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;box-shadow:0 8px 22px #00283214}
+.nav a{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:15px;color:var(--primary);padding:8px 2px;min-height:44px;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:var(--accent)}.nav .ic{color:var(--primary2)}
+main{padding-top:34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:clamp(22px,3.5vw,40px);margin-bottom:28px;box-shadow:0 14px 30px -16px #00283229}
+.stitle{display:flex;align-items:center;gap:16px;font-size:clamp(24px,2.8vw,32px);font-weight:700;color:var(--primary);margin-bottom:24px;border-left:8px solid var(--accent);padding-left:18px}
+.stitle span{width:52px;height:52px;border-radius:26px;background:var(--tint2);display:inline-grid;place-items:center;color:var(--primary2)}
+.stitle .ic{width:26px;height:26px}
+.lead{font-size:18px;color:var(--soft);max-width:80ch;margin:0}
+.hl{background:var(--accentsoft);padding:1px 8px;border-radius:20px;font-weight:600;color:var(--primary)}
+.impact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}
+.impact div{background:var(--tint);border:1px solid var(--line);border-radius:20px;padding:16px 18px}
+.impact b{display:block;font-size:30px;font-weight:800;color:var(--primary);line-height:1.1}.impact span{font-size:14px;color:var(--mut)}
+.stage{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}
+.fig{position:relative;min-height:340px;height:min(580px,70vh);border-radius:24px;background:linear-gradient(160deg,var(--tint),var(--tint2));border:1px solid var(--line);overflow:hidden}
+.fig{background:#02060a}#globe{position:absolute;inset:0;cursor:grab}#globe:active{cursor:grabbing}
+.gpin{all:unset;position:relative;display:block;width:13px;height:13px;border-radius:50%;background:var(--pin);border:2px solid #fff;box-shadow:0 0 0 4px #d9886c40;cursor:pointer}
+.gpin:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.gpin.on{background:#fff;border-color:var(--accent);box-shadow:0 0 0 5px #d4b48366}
+.gpin span{display:none;position:absolute;left:18px;top:50%;transform:translateY(-50%);font:600 12px Inter,sans-serif;color:#fff;background:#08161bd9;padding:3px 9px;border-radius:8px;white-space:nowrap}
+#globe.near .gpin span,.gpin:hover span,.gpin.on span{display:block}
+.ctrl{position:absolute;right:12px;bottom:12px;display:flex;gap:6px}
+.btn{min-height:44px;min-width:44px;border-radius:14px;border:1px solid var(--line);background:var(--card);padding:0 14px;font-size:15px;font-weight:500;color:var(--ink)}
+.btn:hover{border-color:var(--accent)}.btn[aria-pressed=true]{background:var(--primary);color:var(--card);border-color:var(--primary)}
+.filters{position:absolute;left:12px;top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.hint{position:absolute;left:16px;bottom:22px;font-size:13px;color:#c9dadd;pointer-events:none}
+.land{fill:var(--land);stroke:var(--sea);stroke-width:.6}.land.hit{fill:var(--hit)}.grat{fill:none;stroke:var(--grat);stroke-width:.7}
+.route{fill:none;stroke:var(--primary2);stroke-width:1.4;stroke-dasharray:4 6;opacity:.55;animation:flow 2s linear infinite}@keyframes flow{to{stroke-dashoffset:-20}}
+.pin{cursor:pointer}.pin .dot{fill:var(--pin);stroke:#fff;stroke-width:2}.pin .ring{fill:none;stroke:var(--pin);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite}
+.pin.on .dot{fill:#fff;stroke:var(--primary);stroke-width:4}
+.pin text{font:600 13px Inter;fill:var(--ink);paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+@keyframes pulse{from{transform:scale(.7);opacity:.8}to{transform:scale(2.3);opacity:0}}
+.panel{background:var(--tint);border:1px solid var(--line);border-radius:24px;padding:20px;height:min(580px,70vh);overflow:auto}
+.k{font-size:13px;color:var(--mut)}.cont{font-size:15px;font-weight:800;color:var(--ink);margin:18px 0 2px}.cont:first-of-type{margin-top:10px}.ctry{font-size:14px;font-weight:700;color:var(--primary2);margin:8px 0 2px;padding-left:10px;border-left:3px solid var(--accent)}.reg{font-size:12px;color:var(--mut);margin:6px 0 0 13px}.crumb{font-size:13px;color:var(--mut)}.docs a{display:inline-flex;align-items:center;gap:8px;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--primary);font-weight:600;font-size:14px;min-height:44px}.docs a:hover{border-color:var(--accent)}.sec{font-size:13px;font-weight:700;color:var(--primary2);margin:16px 0 4px}
+.plist{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px}
+.plist button{width:100%;text-align:start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;min-height:44px;display:grid;gap:2px}
+.plist button:hover{border-color:var(--accent)}.plist b{font-weight:600}.plist small{color:var(--mut);font-size:13px}
+.back{background:none;border:0;color:var(--primary2);padding:0;min-height:44px;font-size:14px;font-weight:500}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px}
+.tabs button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;min-height:40px;font-size:14px}
+.tabs button[aria-selected=true]{background:var(--primary);color:var(--card);border-color:var(--primary)}
+.det p{margin:8px 0}.det ul{margin:6px 0 10px;padding-inline-start:20px}.det li{margin:3px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}.pills span{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:var(--card)}
+.badge{display:inline-block;background:var(--primary);color:var(--card);padding:3px 12px;border-radius:40px;font-size:12px;font-weight:700;margin-bottom:12px}
+.code{background:var(--codebg);border:1px solid var(--line);border-radius:14px;margin-top:8px;overflow:hidden}
+.codehead{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 6px 6px 14px;font-size:13px;color:var(--mut);border-bottom:1px solid var(--line)}
+.copy{background:var(--card);border:1px solid var(--line);border-radius:10px;min-height:36px;padding:0 12px;font-size:13px}
+pre{margin:0;padding:14px;font:13px/1.6 "JetBrains Mono",ui-monospace,monospace;color:var(--ink)}
+.lang{font-weight:700;color:var(--primary2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.exp{background:var(--tint);border:1px solid var(--line);border-radius:24px;padding:24px;transition:border-color .2s}
+.exp:hover{border-color:var(--accent);background:var(--card)}
+.exp h4{font-size:19px;font-weight:700;color:var(--primary)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--mut);font-size:14px;font-weight:500;margin:8px 0 10px}
+.meta span{display:inline-flex;align-items:center;gap:6px}.meta .ic{color:var(--accent)}
+.exp p{margin:0;color:var(--soft);font-size:15px}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:18px}.head p{margin:0;color:var(--soft);max-width:66ch}
+.lf{display:flex;gap:6px}
+.mcard{background:var(--tint);border:1px solid var(--line);border-radius:22px;padding:20px;display:flex;flex-direction:column}
+.mcard h4{font-size:17px;color:var(--primary);margin-top:4px}.mcard p{color:var(--soft);margin:6px 0 10px;font-size:15px}
+.mcard details{margin-top:auto}.mcard summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600;color:var(--primary2)}
+.used{font-size:13px;color:var(--mut)}.used button{background:none;border:0;padding:0;text-decoration:underline;color:var(--ink);font-size:13px}
+.subh{font-size:18px;font-weight:700;color:var(--primary);margin:22px 0 12px}.subh:first-of-type{margin-top:0}
+.cloud{display:flex;flex-wrap:wrap;gap:10px 12px}
+.skill{display:inline-flex;align-items:center;gap:9px;background:var(--tint2);border:1px solid var(--line);border-radius:50px;padding:9px 18px;font-weight:600;color:var(--primary);font-size:15px;transition:.15s}
+.skill .ic{color:var(--primary2)}.skill:hover{background:var(--primary);color:var(--card)}.skill:hover .ic{color:var(--accent)}
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 22px;align-items:baseline;border-bottom:1px dashed var(--line);padding:14px 0}
+.row:last-child{border-bottom:0}
+.tag{background:var(--primary);color:var(--card);font-weight:700;padding:3px 14px;border-radius:40px;font-size:13px;justify-self:start;white-space:nowrap}
+.row b{font-size:17px;color:var(--ink)}.row small{display:block;color:var(--mut);font-size:14px;margin-top:2px}
+.mosaic{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px}
+.asso{background:var(--tint);border:1px solid var(--line);border-radius:24px;padding:22px}
+.asso i{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:var(--accent);margin-bottom:14px}
+.asso i .ic{width:24px;height:24px}
+.asso h4{font-size:18px;color:var(--primary);margin-bottom:6px}.asso p{margin:0;color:var(--soft);font-size:15px}
+.contact{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;border-radius:36px;padding:clamp(24px,4vw,40px);margin-bottom:28px}
+.contact h2{font-size:clamp(24px,3vw,32px)}.contact p{margin:6px 0 0;color:#d9ebec;max-width:52ch}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{display:flex;align-items:center;gap:10px;background:#ffffff1a;border:1px solid #ffffff33;border-radius:18px;padding:10px 16px;min-height:44px}
+.links a:hover{border-color:var(--accent)}.links .ic{color:var(--accent)}.links small{display:block;font-size:12px;color:#cfe3e4}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
+@media(max-width:900px){.stage{grid-template-columns:minmax(0,1fr)}.panel{height:auto}.fig{height:min(480px,70vh)}.impact{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.hero-content{flex-direction:column;align-items:flex-start;gap:20px}.avatar{width:120px;height:120px}.navwrap{position:relative}.nav{border-radius:24px}.row{grid-template-columns:minmax(0,1fr)}.hint{display:none}.fig{height:400px}}
+@media(prefers-reduced-motion:reduce){.route,.pin .ring{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+ <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+ <symbol id="i-case" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol>
+ <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+ <symbol id="i-tools" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+ <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
+ <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+ <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-6-6-11a6 6 0 0 1 12 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></symbol>
+ <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></symbol>
+ <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></symbol>
+ <symbol id="i-curve" viewBox="0 0 24 24"><path d="M3 19c4 0 5-12 9-12s5 12 9 12"/></symbol>
+ <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+ <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+ <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+ <symbol id="i-team" viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c1-3 3.5-5 6-5s5 2 6 5M14 15c2.5 0 5 1.5 6.5 5"/></symbol>
+ <symbol id="i-link" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></symbol>
+ <symbol id="i-git" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 8v8M18 10c0 4-6 3-11 7"/></symbol>
+</svg>
+
+<header class="hero"><div class="container hero-content">
+  <img class="avatar" src="photo.jpg" alt="Photo d'Armel Mahutin Kanhonou">
+  <div>
+    <h1>Armel Mahutin KANHONOU</h1>
+    <div class="sub"><svg class="ic"><use href="#i-pulse"/></svg>Épidémiologiste · Data scientist en santé</div>
+    <p>Je transforme des données de santé complexes, des bases nationales aux enquêtes de terrain, en résultats qui orientent la décision publique.</p>
+    <div class="chips">
+      <span class="chip"><svg class="ic"><use href="#i-pin"/></svg>Lille, France · Bénin</span>
+      <span class="chip"><svg class="ic"><use href="#i-award"/></svg>Certified Data Scientist Associate</span>
+      <span class="chip"><svg class="ic"><use href="#i-cap"/></svg>Master 2 Data Science en Santé</span>
+      <span class="chip"><svg class="ic"><use href="#i-chat"/></svg>Français C2 · Anglais B1</span>
+    </div>
+  </div>
+</div></header>
+<div class="navwrap"><nav class="nav">
+  <a href="#profil"><svg class="ic"><use href="#i-user"/></svg>Profil</a>
+  <a href="#interventions"><svg class="ic"><use href="#i-globe"/></svg>Interventions</a>
+  <a href="#experiences"><svg class="ic"><use href="#i-case"/></svg>Expériences</a>
+  <a href="#methodes"><svg class="ic"><use href="#i-code"/></svg>Méthodes</a>
+  <a href="#competences"><svg class="ic"><use href="#i-tools"/></svg>Compétences</a>
+  <a href="#formation"><svg class="ic"><use href="#i-cap"/></svg>Formation</a>
+  <a href="#engagement"><svg class="ic"><use href="#i-heart"/></svg>Engagement</a>
+  <a href="#contact"><svg class="ic"><use href="#i-mail"/></svg>Contact</a>
+</nav></div>
+
+<main class="container">
+<section class="card" id="profil">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-user"/></svg></span>Profil</h2>
+  <p class="lead">Épidémiologiste et data scientist en santé, je couvre toute la chaîne de la donnée : conception d'enquête, contrôle qualité, modélisation sous R et Python, rédaction scientifique. À l'unité <span class="hl">EPIMACT (Inserm – IRD)</span>, j'ai mis en évidence un signal thermique robuste sur les hospitalisations psychiatriques à La Réunion, à partir des bases PMSI, RPU et SNDS, et l'ai restitué à l'ARS. Formé au Bénin puis en France, je suis aujourd'hui en <span class="hl">Master 2 Data Science en Santé</span> à Lille et alternant chargé d'études santé-environnement à l'Espace Santé du Littoral.</p>
+</section>
+
+<section class="card" id="interventions">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-globe"/></svg></span>Lieux d'intervention</h2>
+  <div class="stage">
+    <div class="fig">
+      <div id="globe" role="application" aria-label="Globe 3D interactif des lieux d'intervention"></div>
+      <div class="filters" id="filters"></div>
+      <div class="ctrl"><button class="btn" id="zin" aria-label="Zoomer">+</button><button class="btn" id="zout" aria-label="Dézoomer">−</button><button class="btn" id="zreset">Vue globale</button></div>
+      <div class="hint" id="hint">Glisser pour tourner · molette pour zoomer</div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+</section>
+
+<section class="card" id="experiences">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-case"/></svg></span>Expériences</h2>
+  <div class="grid" id="exps"></div>
+</section>
+
+<section class="card" id="methodes">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-code"/></svg></span>Méthodes et code</h2>
+  <div class="head"><p>Chaque méthode mobilisée sur le terrain, avec un code générique prêt à adapter. Ce sont des modèles de départ, pas les scripts originaux des études.</p>
+    <div class="lf" id="lf"><button class="btn" aria-pressed="true" data-l="">Tout</button><button class="btn" aria-pressed="false" data-l="R">R</button><button class="btn" aria-pressed="false" data-l="Python">Python</button></div></div>
+  <div class="grid" id="meth"></div>
+</section>
+
+<section class="card" id="competences">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-tools"/></svg></span>Compétences</h2>
+  <h3 class="subh">Boîte à outils</h3>
+  <div class="cloud">
+    <span class="skill"><svg class="ic"><use href="#i-code"/></svg>R</span><span class="skill"><svg class="ic"><use href="#i-code"/></svg>Python</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>SQL</span><span class="skill"><svg class="ic"><use href="#i-code"/></svg>SAS</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>Stata</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>SPSS</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>Jamovi</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>EpiData · Epi Info</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>KoboToolbox · ODK</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>Power BI</span><span class="skill"><svg class="ic"><use href="#i-git"/></svg>Git · GitHub</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>PMSI · RPU · SNDS</span>
+  </div>
+  <h3 class="subh">Domaines</h3>
+  <div class="cloud">
+    <span class="skill"><svg class="ic"><use href="#i-curve"/></svg>Épidémiologie descriptive et analytique</span><span class="skill"><svg class="ic"><use href="#i-pulse"/></svg>Surveillance épidémiologique</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>Modélisation : régressions, GAM, DLNM</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>Conception d'enquêtes et contrôle qualité</span><span class="skill"><svg class="ic"><use href="#i-globe"/></svg>Climat et santé · One Health</span><span class="skill"><svg class="ic"><use href="#i-chat"/></svg>Rédaction scientifique</span>
+  </div>
+  <h3 class="subh">Langues</h3>
+  <div class="cloud"><span class="skill"><svg class="ic"><use href="#i-chat"/></svg>Français · C2 (TCF, 2024)</span><span class="skill"><svg class="ic"><use href="#i-chat"/></svg>Anglais · B1, scientifique</span></div>
+</section>
+
+<section class="card" id="formation">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-cap"/></svg></span>Formation et certifications</h2>
+  <div class="rows">
+    <div class="row"><span class="tag">2026 – 2027</span><div><b>Master 2 Data Science en Santé</b><small>Université de Lille, en alternance</small></div></div>
+    <div class="row"><span class="tag">2025 – 2026</span><div><b>Master 1 Santé publique, Transition épidémiologique et santé mondiale</b><small>Université de Limoges</small></div></div>
+    <div class="row"><span class="tag">2022 – 2025</span><div><b>Licence professionnelle Surveillance épidémiologique, mention Bien</b><small>ENATSE, Université de Parakou (Bénin)</small></div></div>
+    <div class="row"><span class="tag">2019 – 2022</span><div><b>Baccalauréat scientifique, série D</b><small>Complexe Scolaire Sainte Félicité (Bénin)</small></div></div>
+    <div class="row"><span class="tag">2026</span><div><b>Certified Data Scientist Associate</b><small>DataCamp, certification de carrière</small></div></div>
+    <div class="row"><span class="tag">2024</span><div><b>Introduction à la statistique avec R</b><small>Université Paris-Saclay, FUN MOOC : biostatistique avec R, régressions linéaire et logistique</small></div></div>
+    <div class="row"><span class="tag">2026</span><div><b>Cours DataCamp</b><small>Introduction à Python, Introduction au SQL, SQL intermédiaire, Assembler des données en SQL</small></div></div>
+  </div>
+</section>
+
+<section class="card" id="engagement">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-heart"/></svg></span>Engagement</h2>
+  <div class="mosaic">
+    <div class="asso"><i><svg class="ic"><use href="#i-pulse"/></svg></i><h4>Epi Santé Project</h4><p>Membre de l'équipe fondatrice d'une association de recherche appliquée en santé publique au Bénin, en création.</p></div>
+    <div class="asso"><i><svg class="ic"><use href="#i-team"/></svg></i><h4>Secours Populaire Français</h4><p>Service civique au pôle bénévolat de Limoges : organisation et déploiement des équipes de bénévoles (2026).</p></div>
+    <div class="asso"><i><svg class="ic"><use href="#i-cap"/></svg></i><h4>Bureau des Étudiants, ENATSE</h4><p>Président (2023–2025) : représentation étudiante et coordination d'activités académiques et associatives.</p></div>
+    <div class="asso"><i><svg class="ic"><use href="#i-chat"/></svg></i><h4>Communication scientifique</h4><p>Rencontres scientifiques avec EPIMACT (One Health, maladies chroniques, santé mondiale) et diffusion en santé publique sur les réseaux.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div><h2>Travaillons ensemble</h2><p>Études épidémiologiques, analyse de données de santé, appui méthodologique : écrivez-moi. Références académiques et professionnelles disponibles sur demande.</p></div>
+  <div class="links">
+    <a href="mailto:armelkanhonou1@gmail.com"><svg class="ic"><use href="#i-mail"/></svg><span><small>E-mail</small>armelkanhonou1@gmail.com</span></a>
+    <a href="https://www.linkedin.com/in/armelkanhonou"><svg class="ic"><use href="#i-link"/></svg><span><small>LinkedIn</small>armelkanhonou</span></a>
+    <a href="https://github.com/Armel-Mahutin"><svg class="ic"><use href="#i-git"/></svg><span><small>GitHub</small>Armel-Mahutin</span></a>
+  </div>
+</section>
+</main>
+<footer>© 2026 Armel Mahutin Kanhonou · Les travaux d'appui méthodologique sont présentés sans le nom des personnes accompagnées.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.2/dist/globe.gl.min.js"></script>
+<script>
+{
+const PLACES=[
+ {id:'parakou',name:"Parakou · N'Dali",region:'Borgou',country:'Bénin',continent:'Afrique',lat:9.45,lng:2.63,alt:.32},
+ {id:'kouande',name:'Kouandé',region:'Atacora',country:'Bénin',continent:'Afrique',lat:10.33,lng:1.69,alt:.32},
+ {id:'dassa',name:'Dassa-Zoumè · Glazoué',region:'Collines',country:'Bénin',continent:'Afrique',lat:7.78,lng:2.18,alt:.32},
+ {id:'calavi',name:'Abomey-Calavi',region:'Atlantique',country:'Bénin',continent:'Afrique',lat:6.45,lng:2.35,alt:.32},
+ {id:'benin',name:'Échelle nationale',region:'Tout le pays',country:'Bénin',continent:'Afrique',lat:8.7,lng:2.75,alt:.6},
+ {id:'reunion',name:'La Réunion',region:'Océan Indien',country:'France (outre-mer)',continent:'Afrique',lat:-21.12,lng:55.53,alt:.35},
+ {id:'limoges',name:'Limoges',region:'Nouvelle-Aquitaine',country:'France',continent:'Europe',lat:45.83,lng:1.26,alt:.45},
+ {id:'hdf',name:'Lille · Dunkerque',region:'Hauts-de-France',country:'France',continent:'Europe',lat:50.83,lng:2.72,alt:.45}
+];
+const PROJ=[
+ {id:'thermo',p:'reunion',type:'Recherche',year:'2026',title:'Chaleur et santé mentale à La Réunion (2018–2023)',
+  role:"Stage de recherche de Master 1 à EPIMACT (Inserm U1094 / IRD U270), en partenariat avec l'ARS La Réunion. Encadrement : Dr Farid Boumediene, Dr Fabien Boux, Dr Thibaut Gellé.",
+  summary:"Étude observationnelle en séries temporelles mensuelles reliant les variations thermiques à quatre indicateurs de santé mentale : hospitalisations psychiatriques (PMSI-MCO), passages aux urgences (RPU), délivrances de psychotropes et mortalité.",
+  results:["Hospitalisations psychiatriques : +18,6 % par écart-type de Tmax (IRR = 1,19 ; IC 95 % 1,08–1,30 ; p < 0,001)","Effet maximal en été (IRR = 1,29 ; IC 95 % 1,09–1,52) et lors des mois de chaleur extrême, Tmax > P95 (IRR = 1,15 ; p = 0,038)","Association négative avec les passages aux urgences ; pas d'effet significatif sur les délivrances de psychotropes"],
+  methods:["Données Météo-France (5 stations) et Heat Index, appariées aux données de santé","Anomalies standardisées (z-scores) et classes de percentiles","Corrélations de Spearman","Régressions quasi-Poisson ajustées sur la saisonnalité et la tendance, analyses par saison","Explorations par GAM et DLNM"],tools:['R'],code:['zscore','qp','spearman','gam','dlnm'],docs:[{t:'Mémoire de Master 1 (PDF, 36 pages)',u:'Memoire M1 Armel Kanhonou.pdf'}]},
+ {id:'m1',p:'limoges',type:'Formation',year:'2025–2026',title:'Master 1 Santé publique, Université de Limoges',
+  role:"Parcours Transition épidémiologique et santé mondiale.",summary:"Biostatistique et modélisation, conception de bases de données (Epi Info, KoboCollect, R), investigation d'épidémies, éthique et droit de la santé. Le stage de recherche du M1 porte sur La Réunion : ouvrez ce point pour le détail.",methods:[],tools:['R','Epi Info','KoboCollect'],code:[]},
+ {id:'spf',p:'limoges',type:'Engagement',year:'2026',title:'Service civique au Secours Populaire Français',
+  role:'Pôle bénévolat, Limoges.',summary:"Organisation des équipes de bénévoles et de leur déploiement. Documentation de l'organisation en tableaux de référence pour quatre pôles : accès aux droits vitaux, éducation populaire, insertion, solidarité internationale.",methods:[],tools:[],code:[]},
+ {id:'m2',p:'hdf',type:'Formation',year:'2026–2027',title:'Master 2 Data Science en Santé, Université de Lille',
+  role:'Étudiant.',summary:"Travaux de l'option Data versionnés sur GitHub (organisation Lille-Health-Data-Science). Conception de « Parcours DSS », une application d'apprentissage qui réunit les cours de M1 et de M2 avec une progression hiérarchisée.",methods:[],tools:['R','Python','SQL','Git / GitHub'],code:[],docs:[{t:'Profil GitHub',u:'https://github.com/Armel-Mahutin'}]},
+ {id:'esl',p:'hdf',type:'Alternance',year:'2026–2027',title:"Chargé d'études santé-environnement, Espace Santé du Littoral",
+  role:"Alternant (contrat d'apprentissage), Dunkerque.",summary:"Poste d'alternance du Master 2, au croisement de la santé publique et de l'environnement.",methods:[],tools:[],code:[]},
+ {id:'anx',p:'parakou',type:'Recherche',year:'2024–2025',title:"Anxiété chez les étudiants en sciences médicales et paramédicales, Université de Parakou",
+  role:"Mémoire de Licence professionnelle Surveillance épidémiologique, ENATSE (noté 16/20).",summary:"Enquête transversale auprès de 438 étudiants des trois entités de santé de l'université (participation de 95 %).",
+  results:["Prévalence de l'anxiété (GAD-7 ≥ 5) : 63,2 %","Anxiété légère 39,0 %, modérée 17,4 %, sévère 6,9 %"],
+  methods:["Questionnaire électronique sous KoboCollect","Échelle GAD-7","Calcul de la taille d'échantillon (formule de Schwartz)","Régression logistique multinomiale des facteurs associés"],tools:['KoboCollect'],code:['prev','multinom']},
+ {id:'pme',p:'parakou',type:'Appui méthodologique',year:'2026',title:'Digitalisation de la comptabilité et performance des PME de Parakou',
+  role:"Collecte de terrain et analyse statistique d'un mémoire de Master (UFR-SEG, Université de Parakou).",summary:"Participation à la collecte dans les arrondissements de Parakou, puis analyse sous forme de script R réutilisable, à la place d'un traitement sous SPSS.",methods:['Script d’analyse R reproductible'],tools:['R'],code:['desc']},
+ {id:'perf',p:'parakou',type:'Appui méthodologique',year:'2026',title:"Management et performance des formations sanitaires, zone Parakou–N'Dali",
+  role:"Appui méthodologique et statistique à un mémoire de Master 2.",summary:"Outils de collecte, chronogramme et budget détaillé ; analyse des données sous Python et rédaction des résultats.",methods:['Outils de collecte de données','Diagramme de Gantt et budget','Analyse statistique sous Python'],tools:['Python'],code:['chi2']},
+ {id:'hbv',p:'kouande',type:'Appui méthodologique',year:'2026',title:'Position sociale et hépatite B chez les donneurs de sang, Hôpital de zone de Kouandé',
+  role:"Appui méthodologique et statistique à un mémoire.",summary:"Mesure de la position sociale ajoutée au questionnaire, digitalisation pour la collecte, analyse des données de 453 donneurs et carte du cadre d'étude.",methods:["Échelle subjective de statut social de MacArthur (1 à 10)","Questionnaire KoboToolbox / ODK","Analyses menées en double, sous Python et sous R","Cartographie du cadre d'étude"],tools:['Python','R','KoboToolbox / ODK'],code:['kobo','logit']},
+ {id:'dassa',p:'dassa',type:'Stage',year:'2024',title:'Stage académique, Hôpital de Zone de Dassa-Glazoué',
+  role:'Stagiaire en surveillance épidémiologique.',summary:"Participation à des enquêtes de terrain sur des épidémies locales, collecte et analyse de données épidémiologiques, contribution aux rapports et aux recommandations pour les interventions de santé publique.",methods:['Investigation de terrain','Collecte et analyse de données épidémiologiques','Rapports et recommandations'],tools:[],code:[]},
+ {id:'chuas',p:'calavi',type:'Stage',year:'2023',title:'Stage professionnel, CHU de Zone AS',
+  role:'Stagiaire en information sanitaire.',summary:"Planification et exécution d'activités de santé, collecte et analyse de données épidémiologiques, gestion de l'information sanitaire, contribution aux rapports et aux recommandations.",methods:['Gestion de l’information sanitaire','Indicateurs de morbidité, mortalité, incidence et prévalence'],tools:[],code:[]},
+ {id:'cps',p:'benin',type:'Protocole',year:'',title:'Chimioprévention du paludisme saisonnier (CPS)',
+  role:'Conception et présentation du protocole.',summary:"Protocole d'étude intégrant l'analyse de survie, le calcul de la taille d'échantillon et un budget prévisionnel.",methods:['Courbes de Kaplan-Meier','Modèle de Cox','Nombre d’événements par la formule de Schoenfeld'],tools:[],code:['survie','schoenfeld']},
+ {id:'esp',p:'benin',type:'Engagement',year:'En création',title:'Epi Santé Project',
+  role:"Membre de l'équipe fondatrice d'une association de recherche appliquée en santé publique.",summary:"Produire des données fiables pour orienter les décisions de santé au Bénin et en Afrique de l'Ouest : études épidémiologiques, analyse de données, accompagnement académique et formations, en santé mentale, maladies infectieuses et systèmes de santé.",methods:[],tools:[],code:[]}
+];
+const M=[
+ {id:'prev',lang:'R',name:'Prévalence et IC à 95 %',desc:"Fréquence d'un événement binaire avec un intervalle de confiance exact (Clopper-Pearson).",code:`library(dplyr)
+
+res <- donnees |>
+  summarise(n = sum(!is.na(gad7)), cas = sum(gad7 >= 5, na.rm = TRUE))
+
+test <- binom.test(res$cas, res$n)
+sprintf("Prévalence : %.1f %% [IC 95 %% : %.1f – %.1f]",
+        100 * res$cas / res$n,
+        100 * test$conf.int[1], 100 * test$conf.int[2])`},
+ {id:'multinom',lang:'R',name:'Régression logistique multinomiale',desc:"Facteurs associés à une issue à plusieurs niveaux, comme la sévérité de l'anxiété.",code:`library(nnet)
+
+# GAD-7 : 0-4 minimale, 5-9 légère, 10-14 modérée, 15-21 sévère
+d$gad7 <- rowSums(d[, paste0("gad", 1:7)])
+d$anxiete <- cut(d$gad7, c(-Inf, 4, 9, 14, Inf),
+                 labels = c("minimale", "légère", "modérée", "sévère"))
+
+m <- multinom(anxiete ~ sexe + age + filiere + stress, data = d)
+z <- summary(m)$coefficients / summary(m)$standard.errors
+round(exp(coef(m)), 2)              # rapports de risques relatifs
+round(2 * (1 - pnorm(abs(z))), 3)   # p (test de Wald)`},
+ {id:'desc',lang:'R',name:'Tableau descriptif reproductible',desc:'Un tableau 1 prêt à publier, régénéré à chaque mise à jour des données.',code:`library(dplyr)
+library(gtsummary)
+
+donnees |>
+  select(groupe, age, sexe, niveau_etude) |>
+  tbl_summary(by = groupe, missing = "ifany") |>
+  add_p() |>        # test adapté au type de chaque variable
+  bold_labels()`},
+ {id:'chi2',lang:'Python',name:'Tableau croisé et test du χ²',desc:"Association entre deux variables qualitatives, avec contrôle des effectifs attendus.",code:`import pandas as pd
+from scipy.stats import chi2_contingency
+
+tab = pd.crosstab(df["exposition"], df["issue"])
+chi2, p, ddl, attendus = chi2_contingency(tab)
+
+print(tab)
+print(f"χ² = {chi2:.2f}, ddl = {ddl}, p = {p:.3f}")
+if (attendus < 5).any():
+    print("Effectifs attendus < 5 : préférer le test exact de Fisher")`},
+ {id:'kobo',lang:'Python',name:'Nettoyage d’un export KoboToolbox',desc:'Noms de colonnes, doublons de soumission et contrôles de cohérence avant analyse.',code:`import pandas as pd
+
+df = pd.read_excel("export_kobo.xlsx")
+
+# "groupe/variable" -> "variable"
+df.columns = [c.split("/")[-1] for c in df.columns]
+df = df.drop_duplicates(subset="_uuid")
+
+hors_plage = df[(df["age"] < 18) | (df["age"] > 65)]
+manquants = df.isna().mean().sort_values(ascending=False)
+
+print(f"{len(df)} fiches, {len(hors_plage)} âges hors plage")
+print(manquants.head(10))`},
+ {id:'logit',lang:'Python',name:'Régression logistique et odds ratios',desc:'Facteurs associés à une issue binaire, odds ratios ajustés et IC à 95 %.',code:`import numpy as np
+import pandas as pd
+import statsmodels.formula.api as smf
+
+# issue codée 0 / 1
+m = smf.logit("issue ~ C(classe_statut) + age + C(sexe)", data=df).fit()
+
+ic = np.exp(m.conf_int())
+ors = pd.DataFrame({
+    "OR": np.exp(m.params),
+    "IC 2,5 %": ic[0],
+    "IC 97,5 %": ic[1],
+    "p": m.pvalues,
+}).round(3)
+print(ors)`},
+ {id:'zscore',lang:'R',name:'Anomalies standardisées et percentiles',desc:"Retirer la saisonnalité d'une exposition climatique, puis la classer en froid, normal et chaud.",code:`library(dplyr)
+
+d <- d |>
+  group_by(mois) |>                       # mois calendaire 1 à 12
+  mutate(tmax_z = (tmax - mean(tmax, na.rm = TRUE)) /
+                  sd(tmax, na.rm = TRUE)) |>
+  ungroup() |>
+  mutate(classe = cut(tmax_z,
+           breaks = quantile(tmax_z, c(0, .10, .90, 1), na.rm = TRUE),
+           include.lowest = TRUE,
+           labels = c("< P10", "P10-P90", "> P90")),
+         classe = relevel(classe, ref = "P10-P90"))`},
+ {id:'qp',lang:'R',name:'Régression quasi-Poisson en séries temporelles',desc:"Comptes mensuels selon l'exposition, ajustés sur la saison et la tendance ; effet exprimé en IRR.",code:`d$temps <- seq_len(nrow(d))
+
+m <- glm(cas ~ tmax_z + factor(mois) + temps,
+         family = quasipoisson, data = d)
+
+# IRR pour une hausse d'un écart-type de Tmax
+round(exp(cbind(IRR = coef(m), confint.default(m)))["tmax_z", ], 3)
+
+# Analyse stratifiée par saison
+by(d, d$saison, function(s)
+  exp(coef(glm(cas ~ tmax_z + temps, family = quasipoisson, data = s)))["tmax_z"])`},
+ {id:'gam',lang:'R',name:'Relation non linéaire par GAM',desc:"Forme de la relation exposition–santé et repérage d'un seuil.",code:`library(mgcv)
+
+m <- gam(cas ~ s(tmax, k = 5) + s(temps, k = 10),
+         family = quasipoisson, data = d, method = "REML")
+
+summary(m)
+plot(m, select = 1, shade = TRUE,
+     xlab = "Tmax (°C)", ylab = "Effet lissé (échelle log)")`},
+ {id:'spearman',lang:'R',name:'Corrélation de Spearman',desc:'Association monotone entre deux séries, sans hypothèse de normalité.',code:`ct <- cor.test(d$tmax, d$cas, method = "spearman", exact = FALSE)
+sprintf("rho = %.2f ; p = %.3f", ct$estimate, ct$p.value)`},
+ {id:'dlnm',lang:'R',name:'Exposition décalée (DLNM)',desc:"Effets retardés et non linéaires de la chaleur sur des données journalières.",code:`library(dlnm)
+library(splines)
+
+n_annees <- length(unique(format(d$date, "%Y")))
+cb <- crossbasis(d$tmax, lag = 21,
+                 argvar = list(fun = "ns", df = 3),
+                 arglag = list(fun = "ns", knots = logknots(21, 3)))
+
+m <- glm(cas ~ cb + ns(temps, df = 7 * n_annees) + factor(jour_semaine),
+         family = quasipoisson, data = d)
+
+pred <- crosspred(cb, m, cen = median(d$tmax, na.rm = TRUE), by = 0.5)
+plot(pred, "overall", xlab = "Tmax (°C)", ylab = "RR cumulé (lag 0–21)")`},
+ {id:'survie',lang:'R',name:'Kaplan-Meier et modèle de Cox',desc:"Courbes de survie, test du log-rank, hazard ratios et vérification des risques proportionnels.",code:`library(survival)
+
+km <- survfit(Surv(temps, evenement) ~ bras, data = d)
+plot(km, col = c("#3f7f86", "#d98c74"),
+     xlab = "Jours", ylab = "Survie sans événement")
+survdiff(Surv(temps, evenement) ~ bras, data = d)   # log-rank
+
+cox <- coxph(Surv(temps, evenement) ~ bras + age, data = d)
+summary(cox)     # HR = exp(coef)
+cox.zph(cox)     # risques proportionnels`},
+ {id:'schoenfeld',lang:'R',name:'Nombre d’événements (Schoenfeld)',desc:"Événements nécessaires pour détecter un hazard ratio donné.",code:`nb_evenements <- function(hr, alpha = 0.05, puissance = 0.80, p = 0.5) {
+  # p : proportion de sujets dans le bras exposé
+  ceiling((qnorm(1 - alpha / 2) + qnorm(puissance))^2 /
+            (p * (1 - p) * log(hr)^2))
+}
+
+nb_evenements(hr = 0.70)   # 247 événements`}
+];
+
+const EXPS=[
+ {b:'Santé-environnement',t:"Chargé d'études santé-environnement",o:'Espace Santé du Littoral',l:'Dunkerque',d:'2026 – 2027',x:"Alternance du Master 2 Data Science en Santé, au croisement de la santé publique et de l'environnement.",p:'hdf',i:'esl'},
+ {b:'Climat et santé mentale',t:'Stagiaire de recherche en épidémiologie',o:'EPIMACT, Inserm U1094 – IRD U270',l:'Limoges · La Réunion',d:'Mars – juin 2026',x:"Séries temporelles 2018–2023 (PMSI-MCO, RPU, SNDS, mortalité, Météo-France) ; régressions quasi-Poisson sous R : +18,6 % d'hospitalisations psychiatriques par écart-type de Tmax.",p:'reunion',i:'thermo'},
+ {b:'Appui statistique',t:'Appui méthodologique et statistique',o:'Études de terrain en santé et en gestion',l:'Bénin, à distance',d:'2026',x:"Hépatite B et position sociale chez 453 donneurs de sang (Kouandé), performance des formations sanitaires (Parakou–N'Dali), PME de Parakou : collecte, Python et R.",p:'kouande',i:'hbv'},
+ {b:'Santé mentale',t:'Investigateur principal, mémoire de Licence',o:'ENATSE, Université de Parakou',l:'Parakou',d:'2024 – 2025',x:"Enquête auprès de 438 étudiants en santé (KoboCollect, GAD-7) : 63,2 % d'anxiété ; régression logistique multinomiale. Mémoire noté 16/20.",p:'parakou',i:'anx'},
+ {b:'Santé communautaire',t:'Diagnostic communautaire participatif',o:'Village de Vêdji',l:'Bénin',d:'2023 – 2024',x:"Consultation des habitants, priorisation des problèmes de santé par la méthode de Hanlon, stratégies d'intervention.",p:null},
+ {b:'Investigation de terrain',t:'Stage académique',o:'Hôpital de Zone de Dassa-Glazoué',l:'Bénin',d:'2024',x:"Enquêtes de terrain sur des épidémies locales, collecte et analyse de données épidémiologiques, rapports et recommandations de santé publique.",p:'dassa',i:'dassa'},
+ {b:'Information sanitaire',t:'Stage professionnel',o:'CHU de Zone AS',l:'Bénin',d:'2023',x:"Planification et exécution d'activités de santé, collecte et analyse de données épidémiologiques, gestion de l'information sanitaire.",p:'calavi',i:'chuas'}
+];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ic=n=>`<svg class="ic"><use href="#i-${n}"/></svg>`;
+const byId=Object.fromEntries(M.map(m=>[m.id,m]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s);
+const countries=[...new Set(PLACES.map(p=>p.country))];
+$('#exps').innerHTML=EXPS.map(e=>`<article class="exp"><span class="badge">${esc(e.b)}</span><h4>${esc(e.t)}</h4>
+  <div class="meta"><span>${ic('case')}${esc(e.o)}</span><span>${ic('pin')}${esc(e.l)}</span><span>${ic('cal')}${esc(e.d)}</span></div><p>${esc(e.x)}</p>
+  ${e.p?`<p style="margin-top:10px"><button class="back" data-goexp="${e.i}">Voir sur le globe →</button></p>`:''}</article>`).join('');
+
+const codeBlock=m=>`<div class="code"><div class="codehead"><span><span class="lang">${m.lang}</span> · code générique</span><button class="copy" data-copy="${m.id}">Copier</button></div><pre><code>${esc(m.code)}</code></pre></div>`;
+function selectPre(b){const pre=b.closest('.code').querySelector('pre');const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Ctrl+C'}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const txt=byId[b.dataset.copy].code;
+  const ok=()=>{b.textContent='Copié';setTimeout(()=>b.textContent='Copier',1600)};
+  try{navigator.clipboard.writeText(txt).then(ok,()=>selectPre(b))}catch(_){selectPre(b)}});
+
+const panel=$('#panel');let curPlace=null;
+function renderIndex(){
+  curPlace=null;markPins();
+  const tree={};
+  PLACES.forEach(p=>{const c=tree[p.continent]||(tree[p.continent]={});const k=c[p.country]||(c[p.country]={});(k[p.region]||(k[p.region]=[])).push(p)});
+  panel.innerHTML=`<div class="k">Continent › pays › région › ville. Cliquez sur un lieu ou un point du globe.</div>`+Object.entries(tree).map(([ct,cs])=>`<div class="cont">${esc(ct)}</div>`+Object.entries(cs).map(([c,rs])=>`<div class="ctry">${esc(c)}</div>`+Object.entries(rs).map(([r,ps])=>`<div class="reg">${esc(r)}</div><ul class="plist">${ps.map(p=>{const pr=PROJ.filter(x=>x.p===p.id);
+    return `<li><button data-place="${p.id}"><b>${esc(p.name)}</b><small>${pr.length} ${pr.length>1?'travaux':'travail'} · ${esc([...new Set(pr.map(x=>x.type))].join(', '))}</small></button></li>`}).join('')}</ul>`).join('')).join('')).join('');
+}
+function renderPlace(pid,idx=0){
+  const p=PLACES.find(x=>x.id===pid),pr=PROJ.filter(x=>x.p===pid),j=pr[idx];curPlace=pid;markPins();
+  const list=(h,a)=>a&&a.length?`<div class="sec">${h}</div><ul>${a.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`:'';
+  panel.innerHTML=`<button class="back" data-back>← Tous les lieux</button><div class="crumb">${esc(p.continent)} › ${esc(p.country)} › ${esc(p.region)}</div><h3>${esc(p.name)}</h3>
+   ${pr.length>1?`<div class="tabs" role="tablist">${pr.map((x,i)=>`<button role="tab" aria-selected="${i===idx}" data-tab="${i}">${esc(x.type)}${x.year?' · '+esc(x.year):''}</button>`).join('')}</div>`:'<div style="height:10px"></div>'}
+   <div class="det"><span class="badge">${esc(j.type)}${j.year?' · '+esc(j.year):''}</span>
+   <h3>${esc(j.title)}</h3><p class="k">${esc(j.role)}</p><p>${esc(j.summary)}</p>
+   ${list('Résultats clés',j.results)}${list('Méthodes',j.methods)}
+   ${j.tools.length?`<div class="sec">Outils</div><div class="pills">${j.tools.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}
+   ${j.docs&&j.docs.length?`<div class="sec">Documents</div><div class="docs">${j.docs.map(d=>`<a href="${encodeURI(d.u)}" target="_blank" rel="noopener">${ic('case')}${esc(d.t)}</a>`).join('')}</div>`:''}
+   ${j.code.length?`<div class="sec">Code générique associé</div>${j.code.map(c=>`<div class="k" style="margin-top:10px">${esc(byId[c].name)}</div>${codeBlock(byId[c])}`).join('')}`:''}</div>`;
+  panel.scrollTop=0;
+}
+panel.addEventListener('click',e=>{
+  const pl=e.target.closest('[data-place]');if(pl){go(pl.dataset.place);return}
+  if(e.target.closest('[data-back]')){renderIndex();reset();return}
+  const tb=e.target.closest('[data-tab]');if(tb)renderPlace(curPlace,+tb.dataset.tab);
+});
+function go(pid,idx=0){const p=PLACES.find(x=>x.id===pid);renderPlace(pid,idx);flyTo(p)}
+function goProj(id){const p=PROJ.find(x=>x.id===id);$('#interventions').scrollIntoView();go(p.p,PROJ.filter(x=>x.p===p.p).indexOf(p))}
+$('#exps').addEventListener('click',e=>{const b=e.target.closest('[data-goexp]');if(b)goProj(b.dataset.goexp)});
+
+const gEl=$('#globe');let world=null;
+const HOME={lat:18,lng:18,altitude:2.3};
+function markPins(){document.querySelectorAll('.gpin').forEach(b=>b.classList.toggle('on',b.dataset.id===curPlace))}
+const ROUTE=[{a:[9.45,2.63],b:[45.83,1.26]},{a:[45.83,1.26],b:[50.83,2.72]},{a:[45.83,1.26],b:[-21.12,55.53]}];
+try{
+  const G=window.Globe;
+  try{world=new G(gEl,{animateIn:!reduce})}catch(_){world=G()(gEl)}
+  world.globeImageUrl('earth.jpg').bumpImageUrl('relief.png').backgroundImageUrl('ciel.png')
+    .showAtmosphere(true).atmosphereColor('#8ec5ff').atmosphereAltitude(.2)
+    .htmlElementsData(PLACES).htmlLat('lat').htmlLng('lng').htmlAltitude(.012)
+    .htmlElement(d=>{const el=document.createElement('button');el.className='gpin';el.dataset.id=d.id;el.setAttribute('aria-label',d.name);el.innerHTML=`<span>${esc(d.name)}</span>`;el.style.pointerEvents='auto';el.addEventListener('click',ev=>{ev.stopPropagation();go(d.id)});return el})
+    .ringsData(PLACES).ringLat('lat').ringLng('lng').ringColor(()=>t=>`rgba(255,196,160,${1-t})`).ringMaxRadius(2).ringPropagationSpeed(1.4).ringRepeatPeriod(reduce?0:1500)
+    .arcsData(ROUTE).arcStartLat(d=>d.a[0]).arcStartLng(d=>d.a[1]).arcEndLat(d=>d.b[0]).arcEndLng(d=>d.b[1])
+    .arcColor(()=>['rgba(243,227,196,.95)','rgba(243,227,196,.25)']).arcStroke(.45).arcDashLength(.45).arcDashGap(.2).arcDashAnimateTime(reduce?0:3500)
+    .onZoom(pov=>gEl.classList.toggle('near',pov.altitude<.45));
+  const c=world.controls();c.autoRotate=!reduce;c.autoRotateSpeed=.35;
+  c.addEventListener('start',()=>{c.autoRotate=false;$('#hint').style.display='none'});
+  world.pointOfView(HOME);
+  const fit=()=>world.width(gEl.clientWidth).height(gEl.clientHeight);const ro=new ResizeObserver(fit);ro.observe(gEl);fit();
+  fetch('pays.json').then(r=>r.json()).then(g=>world.polygonsData(g.features).polygonCapColor(()=>'rgba(212,180,131,.22)').polygonSideColor(()=>'rgba(0,0,0,0)').polygonStrokeColor(()=>'#f3e3c4').polygonAltitude(.004)).catch(()=>{});
+}catch(err){world=null;gEl.innerHTML='<p style="padding:24px;color:#dfeaec">Le globe 3D ne peut pas s’afficher sur cet appareil. La liste des lieux reste disponible à côté.</p>'}
+function flyTo(p){if(!world)return;world.controls().autoRotate=false;world.pointOfView({lat:p.lat,lng:p.lng,altitude:p.alt},reduce?0:1600)}
+function reset(){if(world)world.pointOfView(HOME,reduce?0:1300)}
+function zoomBy(f){if(!world)return;const v=world.pointOfView();world.controls().autoRotate=false;world.pointOfView({lat:v.lat,lng:v.lng,altitude:Math.min(4,Math.max(.12,v.altitude*f))},reduce?0:500)}
+$('#zin').onclick=()=>zoomBy(.6);$('#zout').onclick=()=>zoomBy(1/.6);
+$('#zreset').onclick=()=>{renderIndex();setFilter('');reset()};
+const FL=[['','Monde',null],['benin','Bénin',{lat:8.6,lng:2.3,alt:.3}],['france','France',{lat:46.6,lng:2.4,alt:.95}],['reunion','La Réunion',{lat:-21.12,lng:55.53,alt:.35}]];
+$('#filters').innerHTML=FL.map(([v,l])=>`<button class="btn" aria-pressed="${v===''}" data-f="${v}">${l}</button>`).join('');
+function setFilter(v){document.querySelectorAll('#filters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===v))}
+$('#filters').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;const f=FL.find(x=>x[0]===b.dataset.f);setFilter(f[0]);renderIndex();if(f[2])flyTo(f[2]);else reset()});
+
+const usedIn=id=>PROJ.filter(p=>p.code.includes(id));
+function renderMeth(l){
+  $('#meth').innerHTML=M.filter(m=>!l||m.lang===l).map(m=>{const u=usedIn(m.id);
+    return `<article class="mcard"><span class="lang" style="font-size:13px">${m.lang}</span><h4>${esc(m.name)}</h4><p>${esc(m.desc)}</p>
+    <div class="used">${u.length?'Utilisé pour : '+u.map(p=>`<button data-goto="${p.id}">${esc(PLACES.find(x=>x.id===p.p).name)}</button>`).join(', '):''}</div>
+    <details><summary>Voir le code</summary>${codeBlock(m)}</details></article>`}).join('');
+}
+$('#lf').addEventListener('click',e=>{const b=e.target.closest('[data-l]');if(!b)return;document.querySelectorAll('#lf button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderMeth(b.dataset.l)});
+$('#meth').addEventListener('click',e=>{const b=e.target.closest('[data-goto]');if(b)goProj(b.dataset.goto)});
+renderIndex();renderMeth('');
+}
+</script>
+</body>
+</html>
