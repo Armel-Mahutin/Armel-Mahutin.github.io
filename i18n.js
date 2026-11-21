@@ -25,7 +25,7 @@ e2h:"Secours Populaire Français",e2p:"Civic service with the volunteer unit in 
 e3h:"Student Union, ENATSE",e3p:"President (2023–2025): student representation and coordination of academic and community activities.",
 e4h:"Science communication",e4p:"Scientific meetings with EPIMACT (One Health, chronic diseases, global health) and public health outreach on social networks.",
 contactP:"Epidemiological studies, health data analysis, methodological support: get in touch. Academic and professional references available on request.",
-mailLbl:"Email",
+mailLbl:"Email",cvBtn:"Download my CV (PDF, in French)",cvLink:"Download (PDF)",
 footer:"© 2026 Armel Mahutin Kanhonou · Methodological support projects are presented without naming the people supported."
 },
 dyn:{panelIntro:"Continent › country › region › city. Click a place or a point on the globe.",back:"← All places",works:"projects",work:"project",res:"Key results",meth:"Methods",tools:"Tools",docs:"Documents",code:"Associated generic code",seeGlobe:"See on the globe →",seeCode:"View code",usedFor:"Used for: ",generic:"generic code",copy:"Copy",copied:"Copied",fallback:"The 3D globe cannot be displayed on this device. The list of places is still available alongside.",zin:"Zoom in",zout:"Zoom out",filters:["World","Benin","France","Réunion"]},
@@ -84,7 +84,7 @@ e2h:"法国人民救济会（Secours Populaire Français）",e2p:"在利摩日�
 e3h:"ENATSE 学生会",e3p:"主席（2023–2025）：代表学生，协调学术与社团活动。",
 e4h:"科学传播",e4p:"参与 EPIMACT 的学术交流（同一健康、慢性病、全球健康），并在社交网络上传播公共卫生知识。",
 contactP:"流行病学研究、健康数据分析、方法学支持：欢迎联系我。可应要求提供学术和职业推荐人。",
-mailLbl:"电子邮件",
+mailLbl:"电子邮件",cvBtn:"下载我的简历（PDF，法语）",cvLink:"下载（PDF）",
 footer:"© 2026 Armel Mahutin Kanhonou · 方法学支持项目的展示未提及受助者姓名。"
 },
 dyn:{panelIntro:"大洲 › 国家 › 地区 › 城市。点击地点或地球上的标记。",back:"← 所有地点",works:"项工作",work:"项工作",res:"主要结果",meth:"方法",tools:"工具",docs:"文件",code:"相关通用代码",seeGlobe:"在地球上查看 →",seeCode:"查看代码",usedFor:"用于：",generic:"通用代码",copy:"复制",copied:"已复制",fallback:"此设备无法显示 3D 地球。旁边仍可查看地点列表。",zin:"放大",zout:"缩小",filters:["全球","贝宁","法国","留尼汪"]},
@@ -143,7 +143,7 @@ e2h:"الإغاثة الشعبية الفرنسية",e2p:"خدمة مدنية ف
 e3h:"مكتب الطلاب، ENATSE",e3p:"رئيس (2023–2025): تمثيل الطلاب وتنسيق الأنشطة الأكاديمية والجمعوية.",
 e4h:"التواصل العلمي",e4p:"لقاءات علمية مع EPIMACT (الصحة الواحدة، الأمراض المزمنة، الصحة العالمية) ونشر المعرفة في الصحة العامة عبر الشبكات الاجتماعية.",
 contactP:"دراسات وبائية، تحليل بيانات صحية، دعم منهجي: يسعدني تواصلكم. المراجع الأكاديمية والمهنية متاحة عند الطلب.",
-mailLbl:"البريد الإلكتروني",
+mailLbl:"البريد الإلكتروني",cvBtn:"تحميل سيرتي الذاتية (PDF، بالفرنسية)",cvLink:"تحميل (PDF)",
 footer:"© 2026 Armel Mahutin Kanhonou · تُعرض أعمال الدعم المنهجي دون ذكر أسماء الأشخاص المستفيدين."
 },
 dyn:{panelIntro:"القارة › البلد › المنطقة › المدينة. انقر على موقع أو على نقطة في الكرة الأرضية.",back:"→ كل المواقع",works:"أعمال",work:"عمل",res:"أبرز النتائج",meth:"المناهج",tools:"الأدوات",docs:"الوثائق",code:"الشيفرة العامة المرتبطة",seeGlobe:"عرض على الكرة الأرضية ←",seeCode:"عرض الشيفرة",usedFor:"مُستخدَم في: ",generic:"شيفرة عامة",copy:"نسخ",copied:"تم النسخ",fallback:"لا يمكن عرض الكرة الأرضية ثلاثية الأبعاد على هذا الجهاز. تبقى قائمة المواقع متاحة بجانبها.",zin:"تكبير",zout:"تصغير",filters:["العالم","بنين","فرنسا","لا ريونيون"]},
