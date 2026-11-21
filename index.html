@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Armel Kanhonou · Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 /* VOICE: professionnel et posé, sur le modèle d'un portfolio de statisticien en cartes.
    IDEA: une fiche de présentation en sections-cartes, avec un atlas des lieux d'intervention.
@@ -21,7 +21,7 @@
 --codebg:light-dark(#f3f7f7,#0b1214)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,"Noto Sans SC","Noto Sans Arabic",system-ui,sans-serif;overflow-x:clip}
 h1,h2,h3,h4{margin:0;line-height:1.15;text-wrap:balance}
 a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
@@ -45,16 +45,12 @@ html{scroll-padding-top:90px;scroll-behavior:smooth}pre{overflow-x:auto}code{ove
 main{padding-top:34px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:clamp(22px,3.5vw,40px);margin-bottom:28px;box-shadow:0 14px 30px -16px #00283229}
 .stitle{display:flex;align-items:center;gap:16px;font-size:clamp(24px,2.8vw,32px);font-weight:700;color:var(--primary);margin-bottom:24px;border-left:8px solid var(--accent);padding-left:18px}
-.stitle span{width:52px;height:52px;border-radius:26px;background:var(--tint2);display:inline-grid;place-items:center;color:var(--primary2)}
+.stitle>span:first-child{width:52px;height:52px;border-radius:26px;background:var(--tint2);display:inline-grid;place-items:center;color:var(--primary2)}
 .stitle .ic{width:26px;height:26px}
 .lead{font-size:18px;color:var(--soft);max-width:80ch;margin:0}
 .hl{background:var(--accentsoft);padding:1px 8px;border-radius:20px;font-weight:600;color:var(--primary)}
-.impact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}
-.impact div{background:var(--tint);border:1px solid var(--line);border-radius:20px;padding:16px 18px}
-.impact b{display:block;font-size:30px;font-weight:800;color:var(--primary);line-height:1.1}.impact span{font-size:14px;color:var(--mut)}
 .stage{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}
-.fig{position:relative;min-height:340px;height:min(580px,70vh);border-radius:24px;background:linear-gradient(160deg,var(--tint),var(--tint2));border:1px solid var(--line);overflow:hidden}
-.fig{background:#02060a}#globe{position:absolute;inset:0;cursor:grab}#globe:active{cursor:grabbing}
+.fig{position:relative;min-height:340px;height:min(580px,70vh);border-radius:24px;background:#02060a;border:1px solid var(--line);overflow:hidden}#globe{position:absolute;inset:0;cursor:grab}#globe:active{cursor:grabbing}
 .gpin{all:unset;position:relative;display:block;width:13px;height:13px;border-radius:50%;background:var(--pin);border:2px solid #fff;box-shadow:0 0 0 4px #d9886c40;cursor:pointer}
 .gpin:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.gpin.on{background:#fff;border-color:var(--accent);box-shadow:0 0 0 5px #d4b48366}
 .gpin span{display:none;position:absolute;left:18px;top:50%;transform:translateY(-50%);font:600 12px Inter,sans-serif;color:#fff;background:#08161bd9;padding:3px 9px;border-radius:8px;white-space:nowrap}
@@ -64,12 +60,6 @@ main{padding-top:34px}
 .btn:hover{border-color:var(--accent)}.btn[aria-pressed=true]{background:var(--primary);color:var(--card);border-color:var(--primary)}
 .filters{position:absolute;left:12px;top:12px;display:flex;gap:6px;flex-wrap:wrap}
 .hint{position:absolute;left:16px;bottom:22px;font-size:13px;color:#c9dadd;pointer-events:none}
-.land{fill:var(--land);stroke:var(--sea);stroke-width:.6}.land.hit{fill:var(--hit)}.grat{fill:none;stroke:var(--grat);stroke-width:.7}
-.route{fill:none;stroke:var(--primary2);stroke-width:1.4;stroke-dasharray:4 6;opacity:.55;animation:flow 2s linear infinite}@keyframes flow{to{stroke-dashoffset:-20}}
-.pin{cursor:pointer}.pin .dot{fill:var(--pin);stroke:#fff;stroke-width:2}.pin .ring{fill:none;stroke:var(--pin);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite}
-.pin.on .dot{fill:#fff;stroke:var(--primary);stroke-width:4}
-.pin text{font:600 13px Inter;fill:var(--ink);paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
-@keyframes pulse{from{transform:scale(.7);opacity:.8}to{transform:scale(2.3);opacity:0}}
 .panel{background:var(--tint);border:1px solid var(--line);border-radius:24px;padding:20px;height:min(580px,70vh);overflow:auto}
 .k{font-size:13px;color:var(--mut)}.cont{font-size:15px;font-weight:800;color:var(--ink);margin:18px 0 2px}.cont:first-of-type{margin-top:10px}.ctry{font-size:14px;font-weight:700;color:var(--primary2);margin:8px 0 2px;padding-left:10px;border-left:3px solid var(--accent)}.reg{font-size:12px;color:var(--mut);margin:6px 0 0 13px}.crumb{font-size:13px;color:var(--mut)}.docs a{display:inline-flex;align-items:center;gap:8px;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--primary);font-weight:600;font-size:14px;min-height:44px}.docs a:hover{border-color:var(--accent)}.sec{font-size:13px;font-weight:700;color:var(--primary2);margin:16px 0 4px}
 .plist{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px}
@@ -119,10 +109,17 @@ pre{margin:0;padding:14px;font:13px/1.6 "JetBrains Mono",ui-monospace,monospace;
 .links{display:flex;flex-wrap:wrap;gap:10px}
 .links a{display:flex;align-items:center;gap:10px;background:#ffffff1a;border:1px solid #ffffff33;border-radius:18px;padding:10px 16px;min-height:44px}
 .links a:hover{border-color:var(--accent)}.links .ic{color:var(--accent)}.links small{display:block;font-size:12px;color:#cfe3e4}
+.langs{position:absolute;top:14px;inset-inline-end:max(4vw,16px);display:flex;gap:4px;z-index:3}
+.lb{min-height:36px;min-width:44px;padding:0 10px;border-radius:10px;border:1px solid #ffffff40;background:#ffffff14;color:#fff;font-size:13px;font-weight:600}
+.lb:hover{border-color:var(--accent)}.lb[aria-pressed=true]{background:var(--accent);color:#1d2b2e;border-color:var(--accent)}
+[dir=rtl] .stitle{border-left:0;border-right:8px solid var(--accent);padding-left:0;padding-right:18px}
+[dir=rtl] .ctry{border-left:0;border-right:3px solid var(--accent);padding-left:0;padding-right:10px}
+[dir=rtl] .reg{margin:6px 13px 0 0}[dir=rtl] .hero::after{right:auto;left:-8%}
+[dir=rtl] pre,[dir=rtl] .fig{direction:ltr;text-align:left}[dir=rtl] .hero h1{letter-spacing:0}
 footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
-@media(max-width:900px){.stage{grid-template-columns:minmax(0,1fr)}.panel{height:auto}.fig{height:min(480px,70vh)}.impact{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.hero-content{flex-direction:column;align-items:flex-start;gap:20px}.avatar{width:120px;height:120px}.navwrap{position:relative}.nav{border-radius:24px}.row{grid-template-columns:minmax(0,1fr)}.hint{display:none}.fig{height:400px}}
-@media(prefers-reduced-motion:reduce){.route,.pin .ring{animation:none}html{scroll-behavior:auto}}
+@media(max-width:900px){.stage{grid-template-columns:minmax(0,1fr)}.panel{height:auto}.fig{height:min(480px,70vh)}}
+@media(max-width:600px){.langs{position:static;margin-bottom:14px}.hero{padding-top:20px}.hero-content{flex-direction:column;align-items:flex-start;gap:20px}.avatar{width:120px;height:120px}.navwrap{position:relative}.nav{border-radius:24px}.row{grid-template-columns:minmax(0,1fr)}.hint{display:none}.fig{height:400px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -147,111 +144,112 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
  <symbol id="i-git" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 8v8M18 10c0 4-6 3-11 7"/></symbol>
 </svg>
 
-<header class="hero"><div class="container hero-content">
+<header class="hero"><div class="langs" id="langs" role="group" aria-label="Langue / Language"><button class="lb" data-lang="fr" lang="fr">FR</button><button class="lb" data-lang="en" lang="en">EN</button><button class="lb" data-lang="zh" lang="zh-Hans">中文</button><button class="lb" data-lang="ar" lang="ar">العربية</button></div><div class="container hero-content">
   <img class="avatar" src="photo.jpg" alt="Photo d'Armel Mahutin Kanhonou">
   <div>
     <h1>Armel Mahutin KANHONOU</h1>
-    <div class="sub"><svg class="ic"><use href="#i-pulse"/></svg>Épidémiologiste · Data scientist en santé</div>
-    <p>Je transforme des données de santé complexes, des bases nationales aux enquêtes de terrain, en résultats qui orientent la décision publique.</p>
+    <div class="sub"><svg class="ic"><use href="#i-pulse"/></svg><span data-i18n="sub">Épidémiologiste · Data scientist en santé</span></div>
+    <p data-i18n="heroP">Je transforme des données de santé complexes, des bases nationales aux enquêtes de terrain, en résultats qui orientent la décision publique.</p>
     <div class="chips">
-      <span class="chip"><svg class="ic"><use href="#i-pin"/></svg>Lille, France · Bénin</span>
+      <span class="chip"><svg class="ic"><use href="#i-pin"/></svg><span data-i18n="chipLoc">Lille, France · Bénin</span></span>
       <span class="chip"><svg class="ic"><use href="#i-award"/></svg>Certified Data Scientist Associate</span>
-      <span class="chip"><svg class="ic"><use href="#i-cap"/></svg>Master 2 Data Science en Santé</span>
-      <span class="chip"><svg class="ic"><use href="#i-chat"/></svg>Français C2 · Anglais B1</span>
+      <span class="chip"><svg class="ic"><use href="#i-cap"/></svg><span data-i18n="chipM2">Master 2 Data Science en Santé</span></span>
+      <span class="chip"><svg class="ic"><use href="#i-chat"/></svg><span data-i18n="chipLang">Français C2 · Anglais B1</span></span>
     </div>
   </div>
 </div></header>
 <div class="navwrap"><nav class="nav">
-  <a href="#profil"><svg class="ic"><use href="#i-user"/></svg>Profil</a>
-  <a href="#interventions"><svg class="ic"><use href="#i-globe"/></svg>Interventions</a>
-  <a href="#experiences"><svg class="ic"><use href="#i-case"/></svg>Expériences</a>
-  <a href="#methodes"><svg class="ic"><use href="#i-code"/></svg>Méthodes</a>
-  <a href="#competences"><svg class="ic"><use href="#i-tools"/></svg>Compétences</a>
-  <a href="#formation"><svg class="ic"><use href="#i-cap"/></svg>Formation</a>
-  <a href="#engagement"><svg class="ic"><use href="#i-heart"/></svg>Engagement</a>
-  <a href="#contact"><svg class="ic"><use href="#i-mail"/></svg>Contact</a>
+  <a href="#profil"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="nProfil">Profil</span></a>
+  <a href="#interventions"><svg class="ic"><use href="#i-globe"/></svg><span data-i18n="nLieux">Interventions</span></a>
+  <a href="#experiences"><svg class="ic"><use href="#i-case"/></svg><span data-i18n="nExp">Expériences</span></a>
+  <a href="#methodes"><svg class="ic"><use href="#i-code"/></svg><span data-i18n="nMeth">Méthodes</span></a>
+  <a href="#competences"><svg class="ic"><use href="#i-tools"/></svg><span data-i18n="nComp">Compétences</span></a>
+  <a href="#formation"><svg class="ic"><use href="#i-cap"/></svg><span data-i18n="nForm">Formation</span></a>
+  <a href="#engagement"><svg class="ic"><use href="#i-heart"/></svg><span data-i18n="nEng">Engagement</span></a>
+  <a href="#contact"><svg class="ic"><use href="#i-mail"/></svg><span data-i18n="nContact">Contact</span></a>
 </nav></div>
 
 <main class="container">
 <section class="card" id="profil">
-  <h2 class="stitle"><span><svg class="ic"><use href="#i-user"/></svg></span>Profil</h2>
-  <p class="lead">Épidémiologiste et data scientist en santé, je couvre toute la chaîne de la donnée : conception d'enquête, contrôle qualité, modélisation sous R et Python, rédaction scientifique. À l'unité <span class="hl">EPIMACT (Inserm – IRD)</span>, j'ai mis en évidence un signal thermique robuste sur les hospitalisations psychiatriques à La Réunion, à partir des bases PMSI, RPU et SNDS, et l'ai restitué à l'ARS. Formé au Bénin puis en France, je suis aujourd'hui en <span class="hl">Master 2 Data Science en Santé</span> à Lille et alternant chargé d'études santé-environnement à l'Espace Santé du Littoral.</p>
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-user"/></svg></span><span data-i18n="tProfil">Profil</span></h2>
+  <p class="lead" data-i18n="lead">Épidémiologiste et data scientist en santé, je couvre toute la chaîne de la donnée : conception d'enquête, contrôle qualité, modélisation sous R et Python, rédaction scientifique. À l'unité <span class="hl">EPIMACT (Inserm – IRD)</span>, j'ai mis en évidence un signal thermique robuste sur les hospitalisations psychiatriques à La Réunion, à partir des bases PMSI, RPU et SNDS, et l'ai restitué à l'ARS. Formé au Bénin puis en France, je suis aujourd'hui en <span class="hl">Master 2 Data Science en Santé</span> à Lille et alternant chargé d'études santé-environnement à l'Espace Santé du Littoral.</p>
 </section>
 
 <section class="card" id="interventions">
-  <h2 class="stitle"><span><svg class="ic"><use href="#i-globe"/></svg></span>Lieux d'intervention</h2>
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-globe"/></svg></span><span data-i18n="tLieux">Lieux d'intervention</span></h2>
   <div class="stage">
     <div class="fig">
       <div id="globe" role="application" aria-label="Globe 3D interactif des lieux d'intervention"></div>
       <div class="filters" id="filters"></div>
-      <div class="ctrl"><button class="btn" id="zin" aria-label="Zoomer">+</button><button class="btn" id="zout" aria-label="Dézoomer">−</button><button class="btn" id="zreset">Vue globale</button></div>
-      <div class="hint" id="hint">Glisser pour tourner · molette pour zoomer</div>
+      <div class="ctrl"><button class="btn" id="zin" aria-label="Zoomer">+</button><button class="btn" id="zout" aria-label="Dézoomer">−</button><button class="btn" id="zreset" data-i18n="zreset">Vue globale</button></div>
+      <div class="hint" id="hint" data-i18n="hint">Glisser pour tourner · molette pour zoomer</div>
     </div>
     <aside class="panel" id="panel" aria-live="polite"></aside>
   </div>
 </section>
 
 <section class="card" id="experiences">
-  <h2 class="stitle"><span><svg class="ic"><use href="#i-case"/></svg></span>Expériences</h2>
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-case"/></svg></span><span data-i18n="tExp">Expériences</span></h2>
   <div class="grid" id="exps"></div>
 </section>
 
 <section class="card" id="methodes">
-  <h2 class="stitle"><span><svg class="ic"><use href="#i-code"/></svg></span>Méthodes et code</h2>
-  <div class="head"><p>Chaque méthode mobilisée sur le terrain, avec un code générique prêt à adapter. Ce sont des modèles de départ, pas les scripts originaux des études.</p>
-    <div class="lf" id="lf"><button class="btn" aria-pressed="true" data-l="">Tout</button><button class="btn" aria-pressed="false" data-l="R">R</button><button class="btn" aria-pressed="false" data-l="Python">Python</button></div></div>
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-code"/></svg></span><span data-i18n="tMeth">Méthodes et code</span></h2>
+  <div class="head"><p data-i18n="methP">Chaque méthode mobilisée sur le terrain, avec un code générique prêt à adapter. Ce sont des modèles de départ, pas les scripts originaux des études.</p>
+    <div class="lf" id="lf"><button class="btn" aria-pressed="true" data-l="" data-i18n="all">Tout</button><button class="btn" aria-pressed="false" data-l="R">R</button><button class="btn" aria-pressed="false" data-l="Python">Python</button></div></div>
   <div class="grid" id="meth"></div>
 </section>
 
 <section class="card" id="competences">
-  <h2 class="stitle"><span><svg class="ic"><use href="#i-tools"/></svg></span>Compétences</h2>
-  <h3 class="subh">Boîte à outils</h3>
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-tools"/></svg></span><span data-i18n="tComp">Compétences</span></h2>
+  <h3 class="subh" data-i18n="subTools">Boîte à outils</h3>
   <div class="cloud">
     <span class="skill"><svg class="ic"><use href="#i-code"/></svg>R</span><span class="skill"><svg class="ic"><use href="#i-code"/></svg>Python</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>SQL</span><span class="skill"><svg class="ic"><use href="#i-code"/></svg>SAS</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>Stata</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>SPSS</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>Jamovi</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>EpiData · Epi Info</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>KoboToolbox · ODK</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>Power BI</span><span class="skill"><svg class="ic"><use href="#i-git"/></svg>Git · GitHub</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>PMSI · RPU · SNDS</span>
   </div>
-  <h3 class="subh">Domaines</h3>
+  <h3 class="subh" data-i18n="subDom">Domaines</h3>
   <div class="cloud">
-    <span class="skill"><svg class="ic"><use href="#i-curve"/></svg>Épidémiologie descriptive et analytique</span><span class="skill"><svg class="ic"><use href="#i-pulse"/></svg>Surveillance épidémiologique</span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg>Modélisation : régressions, GAM, DLNM</span><span class="skill"><svg class="ic"><use href="#i-db"/></svg>Conception d'enquêtes et contrôle qualité</span><span class="skill"><svg class="ic"><use href="#i-globe"/></svg>Climat et santé · One Health</span><span class="skill"><svg class="ic"><use href="#i-chat"/></svg>Rédaction scientifique</span>
+    <span class="skill"><svg class="ic"><use href="#i-curve"/></svg><span data-i18n="dom1">Épidémiologie descriptive et analytique</span></span><span class="skill"><svg class="ic"><use href="#i-pulse"/></svg><span data-i18n="dom2">Surveillance épidémiologique</span></span><span class="skill"><svg class="ic"><use href="#i-tools"/></svg><span data-i18n="dom3">Modélisation : régressions, GAM, DLNM</span></span><span class="skill"><svg class="ic"><use href="#i-db"/></svg><span data-i18n="dom4">Conception d'enquêtes et contrôle qualité</span></span><span class="skill"><svg class="ic"><use href="#i-globe"/></svg><span data-i18n="dom5">Climat et santé · One Health</span></span><span class="skill"><svg class="ic"><use href="#i-chat"/></svg><span data-i18n="dom6">Rédaction scientifique</span></span>
   </div>
-  <h3 class="subh">Langues</h3>
-  <div class="cloud"><span class="skill"><svg class="ic"><use href="#i-chat"/></svg>Français · C2 (TCF, 2024)</span><span class="skill"><svg class="ic"><use href="#i-chat"/></svg>Anglais · B1, scientifique</span></div>
+  <h3 class="subh" data-i18n="subLang">Langues</h3>
+  <div class="cloud"><span class="skill"><svg class="ic"><use href="#i-chat"/></svg><span data-i18n="lang1">Français · C2 (TCF, 2024)</span></span><span class="skill"><svg class="ic"><use href="#i-chat"/></svg><span data-i18n="lang2">Anglais · B1, scientifique</span></span></div>
 </section>
 
 <section class="card" id="formation">
-  <h2 class="stitle"><span><svg class="ic"><use href="#i-cap"/></svg></span>Formation et certifications</h2>
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-cap"/></svg></span><span data-i18n="tForm">Formation et certifications</span></h2>
   <div class="rows">
-    <div class="row"><span class="tag">2026 – 2027</span><div><b>Master 2 Data Science en Santé</b><small>Université de Lille, en alternance</small></div></div>
-    <div class="row"><span class="tag">2025 – 2026</span><div><b>Master 1 Santé publique, Transition épidémiologique et santé mondiale</b><small>Université de Limoges</small></div></div>
-    <div class="row"><span class="tag">2022 – 2025</span><div><b>Licence professionnelle Surveillance épidémiologique, mention Bien</b><small>ENATSE, Université de Parakou (Bénin)</small></div></div>
-    <div class="row"><span class="tag">2019 – 2022</span><div><b>Baccalauréat scientifique, série D</b><small>Complexe Scolaire Sainte Félicité (Bénin)</small></div></div>
-    <div class="row"><span class="tag">2026</span><div><b>Certified Data Scientist Associate</b><small>DataCamp, certification de carrière</small></div></div>
-    <div class="row"><span class="tag">2024</span><div><b>Introduction à la statistique avec R</b><small>Université Paris-Saclay, FUN MOOC : biostatistique avec R, régressions linéaire et logistique</small></div></div>
-    <div class="row"><span class="tag">2026</span><div><b>Cours DataCamp</b><small>Introduction à Python, Introduction au SQL, SQL intermédiaire, Assembler des données en SQL</small></div></div>
+    <div class="row"><span class="tag">2026 – 2027</span><div><b data-i18n="f1b">Master 2 Data Science en Santé</b><small data-i18n="f1s">Université de Lille, en alternance</small></div></div>
+    <div class="row"><span class="tag">2025 – 2026</span><div><b data-i18n="f2b">Master 1 Santé publique, Transition épidémiologique et santé mondiale</b><small data-i18n="f2s">Université de Limoges</small></div></div>
+    <div class="row"><span class="tag">2022 – 2025</span><div><b data-i18n="f3b">Licence professionnelle Surveillance épidémiologique, mention Bien</b><small data-i18n="f3s">ENATSE, Université de Parakou (Bénin)</small></div></div>
+    <div class="row"><span class="tag">2019 – 2022</span><div><b data-i18n="f4b">Baccalauréat scientifique, série D</b><small data-i18n="f4s">Complexe Scolaire Sainte Félicité (Bénin)</small></div></div>
+    <div class="row"><span class="tag">2026</span><div><b data-i18n="f5b">Certified Data Scientist Associate</b><small data-i18n="f5s">DataCamp, certification de carrière</small></div></div>
+    <div class="row"><span class="tag">2024</span><div><b data-i18n="f6b">Introduction à la statistique avec R</b><small data-i18n="f6s">Université Paris-Saclay, FUN MOOC : biostatistique avec R, régressions linéaire et logistique</small></div></div>
+    <div class="row"><span class="tag">2026</span><div><b data-i18n="f7b">Cours DataCamp</b><small data-i18n="f7s">Introduction à Python, Introduction au SQL, SQL intermédiaire, Assembler des données en SQL</small></div></div>
   </div>
 </section>
 
 <section class="card" id="engagement">
-  <h2 class="stitle"><span><svg class="ic"><use href="#i-heart"/></svg></span>Engagement</h2>
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-heart"/></svg></span><span data-i18n="tEng">Engagement</span></h2>
   <div class="mosaic">
-    <div class="asso"><i><svg class="ic"><use href="#i-pulse"/></svg></i><h4>Epi Santé Project</h4><p>Membre de l'équipe fondatrice d'une association de recherche appliquée en santé publique au Bénin, en création.</p></div>
-    <div class="asso"><i><svg class="ic"><use href="#i-team"/></svg></i><h4>Secours Populaire Français</h4><p>Service civique au pôle bénévolat de Limoges : organisation et déploiement des équipes de bénévoles (2026).</p></div>
-    <div class="asso"><i><svg class="ic"><use href="#i-cap"/></svg></i><h4>Bureau des Étudiants, ENATSE</h4><p>Président (2023–2025) : représentation étudiante et coordination d'activités académiques et associatives.</p></div>
-    <div class="asso"><i><svg class="ic"><use href="#i-chat"/></svg></i><h4>Communication scientifique</h4><p>Rencontres scientifiques avec EPIMACT (One Health, maladies chroniques, santé mondiale) et diffusion en santé publique sur les réseaux.</p></div>
+    <div class="asso"><i><svg class="ic"><use href="#i-pulse"/></svg></i><h4 data-i18n="e1h">Epi Santé Project</h4><p data-i18n="e1p">Membre de l'équipe fondatrice d'une association de recherche appliquée en santé publique au Bénin, en création.</p></div>
+    <div class="asso"><i><svg class="ic"><use href="#i-team"/></svg></i><h4 data-i18n="e2h">Secours Populaire Français</h4><p data-i18n="e2p">Service civique au pôle bénévolat de Limoges : organisation et déploiement des équipes de bénévoles (2026).</p></div>
+    <div class="asso"><i><svg class="ic"><use href="#i-cap"/></svg></i><h4 data-i18n="e3h">Bureau des Étudiants, ENATSE</h4><p data-i18n="e3p">Président (2023–2025) : représentation étudiante et coordination d'activités académiques et associatives.</p></div>
+    <div class="asso"><i><svg class="ic"><use href="#i-chat"/></svg></i><h4 data-i18n="e4h">Communication scientifique</h4><p data-i18n="e4p">Rencontres scientifiques avec EPIMACT (One Health, maladies chroniques, santé mondiale) et diffusion en santé publique sur les réseaux.</p></div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div><h2>Travaillons ensemble</h2><p>Études épidémiologiques, analyse de données de santé, appui méthodologique : écrivez-moi. Références académiques et professionnelles disponibles sur demande.</p></div>
+  <div><h2 data-i18n="tContact">Travaillons ensemble</h2><p data-i18n="contactP">Études épidémiologiques, analyse de données de santé, appui méthodologique : écrivez-moi. Références académiques et professionnelles disponibles sur demande.</p></div>
   <div class="links">
-    <a href="mailto:armelkanhonou1@gmail.com"><svg class="ic"><use href="#i-mail"/></svg><span><small>E-mail</small>armelkanhonou1@gmail.com</span></a>
+    <a href="mailto:armelkanhonou1@gmail.com"><svg class="ic"><use href="#i-mail"/></svg><span><small data-i18n="mailLbl">E-mail</small>armelkanhonou1@gmail.com</span></a>
     <a href="https://www.linkedin.com/in/armelkanhonou"><svg class="ic"><use href="#i-link"/></svg><span><small>LinkedIn</small>armelkanhonou</span></a>
     <a href="https://github.com/Armel-Mahutin"><svg class="ic"><use href="#i-git"/></svg><span><small>GitHub</small>Armel-Mahutin</span></a>
   </div>
 </section>
 </main>
-<footer>© 2026 Armel Mahutin Kanhonou · Les travaux d'appui méthodologique sont présentés sans le nom des personnes accompagnées.</footer>
+<footer data-i18n="footer">© 2026 Armel Mahutin Kanhonou · Les travaux d'appui méthodologique sont présentés sans le nom des personnes accompagnées.</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.2/dist/globe.gl.min.js"></script>
+<script src="i18n.js"></script>
 <script>
 {
 const PLACES=[
@@ -275,13 +273,13 @@ const PROJ=[
  {id:'spf',p:'limoges',type:'Engagement',year:'2026',title:'Service civique au Secours Populaire Français',
   role:'Pôle bénévolat, Limoges.',summary:"Organisation des équipes de bénévoles et de leur déploiement. Documentation de l'organisation en tableaux de référence pour quatre pôles : accès aux droits vitaux, éducation populaire, insertion, solidarité internationale.",methods:[],tools:[],code:[]},
  {id:'m2',p:'hdf',type:'Formation',year:'2026–2027',title:'Master 2 Data Science en Santé, Université de Lille',
-  role:'Étudiant.',summary:"Travaux de l'option Data versionnés sur GitHub (organisation Lille-Health-Data-Science). Conception de « Parcours DSS », une application d'apprentissage qui réunit les cours de M1 et de M2 avec une progression hiérarchisée.",methods:[],tools:['R','Python','SQL','Git / GitHub'],code:[],docs:[{t:'Profil GitHub',u:'https://github.com/Armel-Mahutin'}]},
+  role:'Étudiant.',summary:"Travaux de l'option Data versionnés sur GitHub (organisation Lille-Health-Data-Science). Conception de « Parcours DSS », une application d'apprentissage qui réunit les cours de M1 et de M2 avec une progression hiérarchisée.",methods:[],tools:['R','Python','SQL','Git / GitHub'],code:[],docs:[{t:'Dépôt GitHub de l’option Data',u:'https://github.com/Armel-Mahutin/kanhonou.armel.optiondata2026'},{t:'Profil GitHub',u:'https://github.com/Armel-Mahutin'}]},
  {id:'esl',p:'hdf',type:'Alternance',year:'2026–2027',title:"Chargé d'études santé-environnement, Espace Santé du Littoral",
   role:"Alternant (contrat d'apprentissage), Dunkerque.",summary:"Poste d'alternance du Master 2, au croisement de la santé publique et de l'environnement.",methods:[],tools:[],code:[]},
  {id:'anx',p:'parakou',type:'Recherche',year:'2024–2025',title:"Anxiété chez les étudiants en sciences médicales et paramédicales, Université de Parakou",
   role:"Mémoire de Licence professionnelle Surveillance épidémiologique, ENATSE (noté 16/20).",summary:"Enquête transversale auprès de 438 étudiants des trois entités de santé de l'université (participation de 95 %).",
   results:["Prévalence de l'anxiété (GAD-7 ≥ 5) : 63,2 %","Anxiété légère 39,0 %, modérée 17,4 %, sévère 6,9 %"],
-  methods:["Questionnaire électronique sous KoboCollect","Échelle GAD-7","Calcul de la taille d'échantillon (formule de Schwartz)","Régression logistique multinomiale des facteurs associés"],tools:['KoboCollect'],code:['prev','multinom']},
+  methods:["Questionnaire électronique sous KoboCollect","Échelle GAD-7","Calcul de la taille d'échantillon (formule de Schwartz)","Régression logistique multinomiale des facteurs associés"],tools:['KoboCollect','Python'],code:['prev','multinom'],docs:[{t:'Dépôt GitHub de l’analyse (Python)',u:'https://github.com/Armel-Mahutin/analyse-anxiete-etudiants-parakou'}]},
  {id:'pme',p:'parakou',type:'Appui méthodologique',year:'2026',title:'Digitalisation de la comptabilité et performance des PME de Parakou',
   role:"Collecte de terrain et analyse statistique d'un mémoire de Master (UFR-SEG, Université de Parakou).",summary:"Participation à la collecte dans les arrondissements de Parakou, puis analyse sous forme de script R réutilisable, à la place d'un traitement sous SPSS.",methods:['Script d’analyse R reproductible'],tools:['R'],code:['desc']},
  {id:'perf',p:'parakou',type:'Appui méthodologique',year:'2026',title:"Management et performance des formations sanitaires, zone Parakou–N'Dali",
@@ -443,15 +441,25 @@ const ic=n=>`<svg class="ic"><use href="#i-${n}"/></svg>`;
 const byId=Object.fromEntries(M.map(m=>[m.id,m]));
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $=s=>document.querySelector(s);
+const I18=window.I18N||{};const LANGS=['fr','en','zh','ar'];
+let LANG=(()=>{try{const q=new URLSearchParams(location.search).get('lang');if(LANGS.includes(q))return q}catch(_){}
+  try{const v=localStorage.getItem('lang');if(LANGS.includes(v))return v}catch(_){}
+  const n=(navigator.language||'fr').slice(0,2);return LANGS.includes(n)?n:'fr'})();
+const D=()=>LANG==='fr'?null:I18[LANG];
+const W=t=>{const d=D();return (d&&d.w&&d.w[t])||t};
+const U=(k,fb)=>{const d=D();return (d&&d.dyn&&d.dyn[k]!=null)?d.dyn[k]:fb};
+const P=j=>{const d=D();return d&&d.proj&&d.proj[j.id]?Object.assign({},j,d.proj[j.id]):j};
+const Mn=m=>{const d=D();const t=d&&d.m&&d.m[m.id];return t?{name:t[0],desc:t[1]}:{name:m.name,desc:m.desc}};
+const FR={};document.querySelectorAll('[data-i18n]').forEach(el=>{FR[el.dataset.i18n]=el.innerHTML});
 const countries=[...new Set(PLACES.map(p=>p.country))];
-$('#exps').innerHTML=EXPS.map(e=>`<article class="exp"><span class="badge">${esc(e.b)}</span><h4>${esc(e.t)}</h4>
+function renderExps(){const d=D();$('#exps').innerHTML=EXPS.map((e0,ix)=>{const e=d&&d.exps&&d.exps[ix]?Object.assign({},e0,d.exps[ix]):e0;return `<article class="exp"><span class="badge">${esc(e.b)}</span><h4>${esc(e.t)}</h4>
   <div class="meta"><span>${ic('case')}${esc(e.o)}</span><span>${ic('pin')}${esc(e.l)}</span><span>${ic('cal')}${esc(e.d)}</span></div><p>${esc(e.x)}</p>
-  ${e.p?`<p style="margin-top:10px"><button class="back" data-goexp="${e.i}">Voir sur le globe →</button></p>`:''}</article>`).join('');
+  ${e.p?`<p style="margin-top:10px"><button class="back" data-goexp="${e.i}">${U('seeGlobe','Voir sur le globe →')}</button></p>`:''}</article>`}).join('')}
 
-const codeBlock=m=>`<div class="code"><div class="codehead"><span><span class="lang">${m.lang}</span> · code générique</span><button class="copy" data-copy="${m.id}">Copier</button></div><pre><code>${esc(m.code)}</code></pre></div>`;
+const codeBlock=m=>`<div class="code"><div class="codehead"><span><span class="lang">${m.lang}</span> · ${U('generic','code générique')}</span><button class="copy" data-copy="${m.id}">${U('copy','Copier')}</button></div><pre><code>${esc(m.code)}</code></pre></div>`;
 function selectPre(b){const pre=b.closest('.code').querySelector('pre');const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Ctrl+C'}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;const txt=byId[b.dataset.copy].code;
-  const ok=()=>{b.textContent='Copié';setTimeout(()=>b.textContent='Copier',1600)};
+  const ok=()=>{b.textContent=U('copied','Copié');setTimeout(()=>b.textContent=U('copy','Copier'),1600)};
   try{navigator.clipboard.writeText(txt).then(ok,()=>selectPre(b))}catch(_){selectPre(b)}});
 
 const panel=$('#panel');let curPlace=null;
@@ -459,20 +467,20 @@ function renderIndex(){
   curPlace=null;markPins();
   const tree={};
   PLACES.forEach(p=>{const c=tree[p.continent]||(tree[p.continent]={});const k=c[p.country]||(c[p.country]={});(k[p.region]||(k[p.region]=[])).push(p)});
-  panel.innerHTML=`<div class="k">Continent › pays › région › ville. Cliquez sur un lieu ou un point du globe.</div>`+Object.entries(tree).map(([ct,cs])=>`<div class="cont">${esc(ct)}</div>`+Object.entries(cs).map(([c,rs])=>`<div class="ctry">${esc(c)}</div>`+Object.entries(rs).map(([r,ps])=>`<div class="reg">${esc(r)}</div><ul class="plist">${ps.map(p=>{const pr=PROJ.filter(x=>x.p===p.id);
-    return `<li><button data-place="${p.id}"><b>${esc(p.name)}</b><small>${pr.length} ${pr.length>1?'travaux':'travail'} · ${esc([...new Set(pr.map(x=>x.type))].join(', '))}</small></button></li>`}).join('')}</ul>`).join('')).join('')).join('');
+  panel.innerHTML=`<div class="k">${esc(U('panelIntro','Continent › pays › région › ville. Cliquez sur un lieu ou un point du globe.'))}</div>`+Object.entries(tree).map(([ct,cs])=>`<div class="cont">${esc(W(ct))}</div>`+Object.entries(cs).map(([c,rs])=>`<div class="ctry">${esc(W(c))}</div>`+Object.entries(rs).map(([r,ps])=>`<div class="reg">${esc(W(r))}</div><ul class="plist">${ps.map(p=>{const pr=PROJ.filter(x=>x.p===p.id);
+    return `<li><button data-place="${p.id}"><b>${esc(W(p.name))}</b><small>${pr.length} ${pr.length>1?U('works','travaux'):U('work','travail')} · ${esc([...new Set(pr.map(x=>W(x.type)))].join(', '))}</small></button></li>`}).join('')}</ul>`).join('')).join('')).join('');
 }
 function renderPlace(pid,idx=0){
-  const p=PLACES.find(x=>x.id===pid),pr=PROJ.filter(x=>x.p===pid),j=pr[idx];curPlace=pid;markPins();
+  const p=PLACES.find(x=>x.id===pid),pr=PROJ.filter(x=>x.p===pid),j=P(pr[idx]);curPlace=pid;markPins();
   const list=(h,a)=>a&&a.length?`<div class="sec">${h}</div><ul>${a.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`:'';
-  panel.innerHTML=`<button class="back" data-back>← Tous les lieux</button><div class="crumb">${esc(p.continent)} › ${esc(p.country)} › ${esc(p.region)}</div><h3>${esc(p.name)}</h3>
-   ${pr.length>1?`<div class="tabs" role="tablist">${pr.map((x,i)=>`<button role="tab" aria-selected="${i===idx}" data-tab="${i}">${esc(x.type)}${x.year?' · '+esc(x.year):''}</button>`).join('')}</div>`:'<div style="height:10px"></div>'}
-   <div class="det"><span class="badge">${esc(j.type)}${j.year?' · '+esc(j.year):''}</span>
+  panel.innerHTML=`<button class="back" data-back>${esc(U('back','← Tous les lieux'))}</button><div class="crumb">${esc(W(p.continent))} › ${esc(W(p.country))} › ${esc(W(p.region))}</div><h3>${esc(W(p.name))}</h3>
+   ${pr.length>1?`<div class="tabs" role="tablist">${pr.map((x,i)=>`<button role="tab" aria-selected="${i===idx}" data-tab="${i}">${esc(W(x.type))}${x.year?' · '+esc(W(x.year)):''}</button>`).join('')}</div>`:'<div style="height:10px"></div>'}
+   <div class="det"><span class="badge">${esc(W(j.type))}${j.year?' · '+esc(W(j.year)):''}</span>
    <h3>${esc(j.title)}</h3><p class="k">${esc(j.role)}</p><p>${esc(j.summary)}</p>
-   ${list('Résultats clés',j.results)}${list('Méthodes',j.methods)}
-   ${j.tools.length?`<div class="sec">Outils</div><div class="pills">${j.tools.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}
-   ${j.docs&&j.docs.length?`<div class="sec">Documents</div><div class="docs">${j.docs.map(d=>`<a href="${encodeURI(d.u)}" target="_blank" rel="noopener">${ic('case')}${esc(d.t)}</a>`).join('')}</div>`:''}
-   ${j.code.length?`<div class="sec">Code générique associé</div>${j.code.map(c=>`<div class="k" style="margin-top:10px">${esc(byId[c].name)}</div>${codeBlock(byId[c])}`).join('')}`:''}</div>`;
+   ${list(U('res','Résultats clés'),j.results)}${list(U('meth','Méthodes'),j.methods)}
+   ${j.tools.length?`<div class="sec">${U('tools','Outils')}</div><div class="pills">${j.tools.map(x=>`<span>${esc(W(x))}</span>`).join('')}</div>`:''}
+   ${j.docs&&j.docs.length?`<div class="sec">${U('docs','Documents')}</div><div class="docs">${j.docs.map(d=>`<a href="${encodeURI(d.u)}" target="_blank" rel="noopener">${ic('case')}${esc(W(d.t))}</a>`).join('')}</div>`:''}
+   ${j.code.length?`<div class="sec">${U('code','Code générique associé')}</div>${j.code.map(c=>`<div class="k" style="margin-top:10px">${esc(Mn(byId[c]).name)}</div>${codeBlock(byId[c])}`).join('')}`:''}</div>`;
   panel.scrollTop=0;
 }
 panel.addEventListener('click',e=>{
@@ -494,7 +502,7 @@ try{
   world.globeImageUrl('earth.jpg').bumpImageUrl('relief.png').backgroundImageUrl('ciel.png')
     .showAtmosphere(true).atmosphereColor('#8ec5ff').atmosphereAltitude(.2)
     .htmlElementsData(PLACES).htmlLat('lat').htmlLng('lng').htmlAltitude(.012)
-    .htmlElement(d=>{const el=document.createElement('button');el.className='gpin';el.dataset.id=d.id;el.setAttribute('aria-label',d.name);el.innerHTML=`<span>${esc(d.name)}</span>`;el.style.pointerEvents='auto';el.addEventListener('click',ev=>{ev.stopPropagation();go(d.id)});return el})
+    .htmlElement(d=>{const el=document.createElement('button');el.className='gpin';el.dataset.id=d.id;el.setAttribute('aria-label',W(d.name));el.innerHTML=`<span>${esc(W(d.name))}</span>`;el.style.pointerEvents='auto';el.addEventListener('click',ev=>{ev.stopPropagation();go(d.id)});return el})
     .ringsData(PLACES).ringLat('lat').ringLng('lng').ringColor(()=>t=>`rgba(255,196,160,${1-t})`).ringMaxRadius(2).ringPropagationSpeed(1.4).ringRepeatPeriod(reduce?0:1500)
     .arcsData(ROUTE).arcStartLat(d=>d.a[0]).arcStartLng(d=>d.a[1]).arcEndLat(d=>d.b[0]).arcEndLng(d=>d.b[1])
     .arcColor(()=>['rgba(243,227,196,.95)','rgba(243,227,196,.25)']).arcStroke(.45).arcDashLength(.45).arcDashGap(.2).arcDashAnimateTime(reduce?0:3500)
@@ -504,27 +512,42 @@ try{
   world.pointOfView(HOME);
   const fit=()=>world.width(gEl.clientWidth).height(gEl.clientHeight);const ro=new ResizeObserver(fit);ro.observe(gEl);fit();
   fetch('pays.json').then(r=>r.json()).then(g=>world.polygonsData(g.features).polygonCapColor(()=>'rgba(212,180,131,.22)').polygonSideColor(()=>'rgba(0,0,0,0)').polygonStrokeColor(()=>'#f3e3c4').polygonAltitude(.004)).catch(()=>{});
-}catch(err){world=null;gEl.innerHTML='<p style="padding:24px;color:#dfeaec">Le globe 3D ne peut pas s’afficher sur cet appareil. La liste des lieux reste disponible à côté.</p>'}
+}catch(err){world=null;gEl.innerHTML='<p style="padding:24px;color:#dfeaec">'+esc(U('fallback','Le globe 3D ne peut pas s’afficher sur cet appareil. La liste des lieux reste disponible à côté.'))+'</p>'}
 function flyTo(p){if(!world)return;world.controls().autoRotate=false;world.pointOfView({lat:p.lat,lng:p.lng,altitude:p.alt},reduce?0:1600)}
 function reset(){if(world)world.pointOfView(HOME,reduce?0:1300)}
 function zoomBy(f){if(!world)return;const v=world.pointOfView();world.controls().autoRotate=false;world.pointOfView({lat:v.lat,lng:v.lng,altitude:Math.min(4,Math.max(.12,v.altitude*f))},reduce?0:500)}
 $('#zin').onclick=()=>zoomBy(.6);$('#zout').onclick=()=>zoomBy(1/.6);
 $('#zreset').onclick=()=>{renderIndex();setFilter('');reset()};
 const FL=[['','Monde',null],['benin','Bénin',{lat:8.6,lng:2.3,alt:.3}],['france','France',{lat:46.6,lng:2.4,alt:.95}],['reunion','La Réunion',{lat:-21.12,lng:55.53,alt:.35}]];
-$('#filters').innerHTML=FL.map(([v,l])=>`<button class="btn" aria-pressed="${v===''}" data-f="${v}">${l}</button>`).join('');
-function setFilter(v){document.querySelectorAll('#filters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===v))}
+let curF='';function renderFilters(){const lab=U('filters',null);$('#filters').innerHTML=FL.map(([v,l],i)=>`<button class="btn" aria-pressed="${v===curF}" data-f="${v}">${esc(lab?lab[i]:l)}</button>`).join('')}renderFilters();
+function setFilter(v){curF=v;document.querySelectorAll('#filters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===v))}
 $('#filters').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;const f=FL.find(x=>x[0]===b.dataset.f);setFilter(f[0]);renderIndex();if(f[2])flyTo(f[2]);else reset()});
 
 const usedIn=id=>PROJ.filter(p=>p.code.includes(id));
 function renderMeth(l){
   $('#meth').innerHTML=M.filter(m=>!l||m.lang===l).map(m=>{const u=usedIn(m.id);
-    return `<article class="mcard"><span class="lang" style="font-size:13px">${m.lang}</span><h4>${esc(m.name)}</h4><p>${esc(m.desc)}</p>
-    <div class="used">${u.length?'Utilisé pour : '+u.map(p=>`<button data-goto="${p.id}">${esc(PLACES.find(x=>x.id===p.p).name)}</button>`).join(', '):''}</div>
-    <details><summary>Voir le code</summary>${codeBlock(m)}</details></article>`}).join('');
+    const t=Mn(m);return `<article class="mcard"><span class="lang" style="font-size:13px">${m.lang}</span><h4>${esc(t.name)}</h4><p>${esc(t.desc)}</p>
+    <div class="used">${u.length?esc(U('usedFor','Utilisé pour : '))+u.map(p=>`<button data-goto="${p.id}">${esc(W(PLACES.find(x=>x.id===p.p).name))}</button>`).join(', '):''}</div>
+    <details><summary>${U('seeCode','Voir le code')}</summary>${codeBlock(m)}</details></article>`}).join('');
 }
-$('#lf').addEventListener('click',e=>{const b=e.target.closest('[data-l]');if(!b)return;document.querySelectorAll('#lf button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderMeth(b.dataset.l)});
+let curL='';$('#lf').addEventListener('click',e=>{const b=e.target.closest('[data-l]');if(!b)return;curL=b.dataset.l;document.querySelectorAll('#lf button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderMeth(curL)});
 $('#meth').addEventListener('click',e=>{const b=e.target.closest('[data-goto]');if(b)goProj(b.dataset.goto)});
-renderIndex();renderMeth('');
+let curIdx=0;
+function applyLang(l){
+  LANG=LANGS.includes(l)?l:'fr';const d=D();
+  document.documentElement.lang=LANG==='zh'?'zh-Hans':LANG;document.documentElement.dir=LANG==='ar'?'rtl':'ltr';
+  document.title=(d&&d.title)||'Armel Kanhonou · Portfolio';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;el.innerHTML=(d&&d.ui&&d.ui[k]!=null)?d.ui[k]:FR[k]});
+  $('#zin').setAttribute('aria-label',U('zin','Zoomer'));$('#zout').setAttribute('aria-label',U('zout','Dézoomer'));
+  document.querySelectorAll('#langs .lb').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===LANG));
+  renderExps();renderMeth(curL);renderFilters();
+  if(curPlace){const tb=panel.querySelector('[data-tab][aria-selected=true]');renderPlace(curPlace,tb?+tb.dataset.tab:0)}else renderIndex();
+  if(world)world.htmlElementsData(PLACES.map(p=>Object.assign({},p)));markPins();
+  try{localStorage.setItem('lang',LANG)}catch(_){}
+  try{const u=new URL(location.href);if(LANG==='fr')u.searchParams.delete('lang');else u.searchParams.set('lang',LANG);history.replaceState(null,'',u)}catch(_){}
+}
+$('#langs').addEventListener('click',e=>{const b=e.target.closest('[data-lang]');if(b)applyLang(b.dataset.lang)});
+applyLang(LANG);
 }
 </script>
 </body>
