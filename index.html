@@ -108,6 +108,8 @@ pre{margin:0;padding:14px;font:13px/1.6 "JetBrains Mono",ui-monospace,monospace;
 .ed{display:flex;gap:14px;align-items:center;min-width:0}
 .logo{width:44px;height:44px;flex:none;border-radius:10px;background:#fff;border:1px solid var(--line);object-fit:contain;padding:6px}
 .logo.mono{display:grid;place-items:center;padding:0;font-weight:700;font-size:13px;color:var(--primary);background:var(--tint2)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-top:14px}
+.vgrid video{display:block;width:100%;aspect-ratio:16/9;background:#1f3a40;border-bottom:1px solid var(--line)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;margin-top:14px}
 .pcard{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--tint);display:flex;flex-direction:column}
 .pcard a.fig2{display:block;background:#fff;border-bottom:1px solid var(--line)}
@@ -163,6 +165,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-6-6-11a6 6 0 0 1 12 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></symbol>
  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></symbol>
  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></symbol>
+ <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></symbol>
  <symbol id="i-curve" viewBox="0 0 24 24"><path d="M3 19c4 0 5-12 9-12s5 12 9 12"/></symbol>
  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
  <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
@@ -193,6 +196,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
   <a href="#experiences"><svg class="ic"><use href="#i-case"/></svg><span data-i18n="nExp">Expériences</span></a>
   <a href="#methodes"><svg class="ic"><use href="#i-code"/></svg><span data-i18n="nMeth">Méthodes</span></a>
   <a href="#projets"><svg class="ic"><use href="#i-curve"/></svg><span data-i18n="nProj">Projets</span></a>
+  <a href="#videos"><svg class="ic"><use href="#i-play"/></svg><span data-i18n="nVid">Vidéos</span></a>
   <a href="#competences"><svg class="ic"><use href="#i-tools"/></svg><span data-i18n="nComp">Compétences</span></a>
   <a href="#formation"><svg class="ic"><use href="#i-cap"/></svg><span data-i18n="nForm">Formation</span></a>
   <a href="#engagement"><svg class="ic"><use href="#i-heart"/></svg><span data-i18n="nEng">Engagement</span></a>
@@ -242,6 +246,23 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
       <div class="pb"><span class="pk" data-i18n="r3k">Projet Python · apprentissage automatique</span><h3 data-i18n="r3t">Prédire la réhospitalisation à 30 jours</h3><p data-i18n="r3p">Régression logistique contre gradient boosting sur 6 000 séjours simulés : pipeline sans fuite de données, validation croisée, AUC avec IC bootstrap, calibration. Le modèle simple fait aussi bien (AUC 0,71 contre 0,70).</p><a class="plink" href="https://github.com/Armel-Mahutin/prediction-rehospitalisation" target="_blank" rel="noopener" data-i18n="r3l">Voir le code sur GitHub →</a></div></article>
     <article class="pcard"><a class="fig2" href="projet%20synthea.png" target="_blank" rel="noopener"><img src="projet%20synthea.png" alt="Courbes ROC et de calibration du modèle sur les données Synthea" loading="lazy" width="1100" height="460"></a>
       <div class="pb"><span class="pk" data-i18n="r4k">Projet Python · données Synthea</span><h3 data-i18n="r4t">Risque d'hospitalisation ou d'urgences à 12 mois</h3><p data-i18n="r4p">3 058 adultes issus de dossiers médicaux synthétiques Synthea (MITRE) : variables mesurées avant la date de référence, AUC 0,66 (IC 95 % 0,61–0,71), calibration et équité par sexe et revenu. Le modèle surestime le risque chez les femmes : une recalibration serait nécessaire.</p><a class="plink" href="https://github.com/Armel-Mahutin/risque-hospitalisation-synthea" target="_blank" rel="noopener" data-i18n="r4l">Voir le code sur GitHub →</a></div></article>
+  </div>
+</section>
+
+<section class="card" id="videos">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-play"/></svg></span><span data-i18n="tVid">Mes travaux expliqués en vidéo</span></h2>
+  <p data-i18n="vidP">Cinq vidéos d'environ une minute pour le grand public : ce que chaque travail a cherché, ce qu'il a trouvé et ce qu'on peut en retenir au quotidien. En anglais, avec sous-titres incrustés.</p>
+  <div class="vgrid">
+    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20chaleur.jpg" src="video%20chaleur.mp4" aria-label="Heat and the mind"></video>
+      <div class="pb"><span class="pk" data-i18n="v1k">Étude · La Réunion</span><h3>Heat and the mind</h3><p data-i18n="v1p">Pourquoi la chaleur pèse aussi sur le moral, et quatre gestes pendant une canicule.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20anxiete.jpg" src="video%20anxiete.mp4" aria-label="Anxiety at university"></video>
+      <div class="pb"><span class="pk" data-i18n="v2k">Étude · Bénin</span><h3>Anxiety at university</h3><p data-i18n="v2p">L'anxiété chez les étudiants en santé de l'Université de Parakou, et ce qui aide.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20dlnm.jpg" src="video%20dlnm.mp4" aria-label="Heat leaves a trail"></video>
+      <div class="pb"><span class="pk" data-i18n="v3k">Projet · modèle DLNM</span><h3>Heat leaves a trail</h3><p data-i18n="v3p">Les effets d'une journée chaude peuvent durer plusieurs jours : comment les mesurer.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20prediction.jpg" src="video%20prediction.mp4" aria-label="Simple can be smart"></video>
+      <div class="pb"><span class="pk" data-i18n="v4k">Projet · prédiction</span><h3>Simple can be smart</h3><p data-i18n="v4p">Prévoir les retours à l'hôpital : le modèle simple fait aussi bien que le complexe.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20synthea.jpg" src="video%20synthea.mp4" aria-label="Fake patients, real lessons"></video>
+      <div class="pb"><span class="pk" data-i18n="v5k">Projet · données Synthea</span><h3>Fake patients, real lessons</h3><p data-i18n="v5p">Des patients synthétiques pour protéger la vie privée, et un contrôle d'équité du modèle.</p></div></article>
   </div>
 </section>
 
