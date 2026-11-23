@@ -251,18 +251,18 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
 
 <section class="card" id="videos">
   <h2 class="stitle"><span><svg class="ic"><use href="#i-play"/></svg></span><span data-i18n="tVid">Mes travaux expliqués en vidéo</span></h2>
-  <p data-i18n="vidP">Cinq vidéos d'environ une minute pour le grand public : ce que chaque travail a cherché, ce qu'il a trouvé et ce qu'on peut en retenir au quotidien. En anglais, avec sous-titres incrustés.</p>
+  <p data-i18n="vidP">Cinq vidéos d'environ une minute pour le grand public : ce que chaque travail a cherché, ce qu'il a trouvé et ce qu'on peut en retenir au quotidien. En français, avec sous-titres incrustés (version anglaise dans les autres langues du site).</p>
   <div class="vgrid">
-    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20chaleur.jpg" src="video%20chaleur.mp4" aria-label="Heat and the mind"></video>
-      <div class="pb"><span class="pk" data-i18n="v1k">Étude · La Réunion</span><h3>Heat and the mind</h3><p data-i18n="v1p">Pourquoi la chaleur pèse aussi sur le moral, et quatre gestes pendant une canicule.</p></div></article>
-    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20anxiete.jpg" src="video%20anxiete.mp4" aria-label="Anxiety at university"></video>
-      <div class="pb"><span class="pk" data-i18n="v2k">Étude · Bénin</span><h3>Anxiety at university</h3><p data-i18n="v2p">L'anxiété chez les étudiants en santé de l'Université de Parakou, et ce qui aide.</p></div></article>
-    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20dlnm.jpg" src="video%20dlnm.mp4" aria-label="Heat leaves a trail"></video>
-      <div class="pb"><span class="pk" data-i18n="v3k">Projet · modèle DLNM</span><h3>Heat leaves a trail</h3><p data-i18n="v3p">Les effets d'une journée chaude peuvent durer plusieurs jours : comment les mesurer.</p></div></article>
-    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20prediction.jpg" src="video%20prediction.mp4" aria-label="Simple can be smart"></video>
-      <div class="pb"><span class="pk" data-i18n="v4k">Projet · prédiction</span><h3>Simple can be smart</h3><p data-i18n="v4p">Prévoir les retours à l'hôpital : le modèle simple fait aussi bien que le complexe.</p></div></article>
-    <article class="pcard"><video controls playsinline preload="none" poster="affiche%20synthea.jpg" src="video%20synthea.mp4" aria-label="Fake patients, real lessons"></video>
-      <div class="pb"><span class="pk" data-i18n="v5k">Projet · données Synthea</span><h3>Fake patients, real lessons</h3><p data-i18n="v5p">Des patients synthétiques pour protéger la vie privée, et un contrôle d'équité du modèle.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" data-v="chaleur" poster="affiche%20chaleur%20fr.jpg" src="video%20chaleur%20fr.mp4" aria-label="Chaleur et moral"></video>
+      <div class="pb"><span class="pk" data-i18n="v1k">Étude · La Réunion</span><h3 data-i18n="v1t">Chaleur et moral</h3><p data-i18n="v1p">Pourquoi la chaleur pèse aussi sur le moral, et quatre gestes pendant une canicule.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" data-v="anxiete" poster="affiche%20anxiete%20fr.jpg" src="video%20anxiete%20fr.mp4" aria-label="Anxiété chez les étudiants"></video>
+      <div class="pb"><span class="pk" data-i18n="v2k">Étude · Bénin</span><h3 data-i18n="v2t">Anxiété chez les étudiants</h3><p data-i18n="v2p">L'anxiété chez les étudiants en santé de l'Université de Parakou, et ce qui aide.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" data-v="dlnm" poster="affiche%20dlnm%20fr.jpg" src="video%20dlnm%20fr.mp4" aria-label="La chaleur laisse des traces"></video>
+      <div class="pb"><span class="pk" data-i18n="v3k">Projet · modèle DLNM</span><h3 data-i18n="v3t">La chaleur laisse des traces</h3><p data-i18n="v3p">Les effets d'une journée chaude peuvent durer plusieurs jours : comment les mesurer.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" data-v="prediction" poster="affiche%20prediction%20fr.jpg" src="video%20prediction%20fr.mp4" aria-label="Simple mais efficace"></video>
+      <div class="pb"><span class="pk" data-i18n="v4k">Projet · prédiction</span><h3 data-i18n="v4t">Simple mais efficace</h3><p data-i18n="v4p">Prévoir les retours à l'hôpital : le modèle simple fait aussi bien que le complexe.</p></div></article>
+    <article class="pcard"><video controls playsinline preload="none" data-v="synthea" poster="affiche%20synthea%20fr.jpg" src="video%20synthea%20fr.mp4" aria-label="Faux patients, vraies leçons"></video>
+      <div class="pb"><span class="pk" data-i18n="v5k">Projet · données Synthea</span><h3 data-i18n="v5t">Faux patients, vraies leçons</h3><p data-i18n="v5p">Des patients synthétiques pour protéger la vie privée, et un contrôle d'équité du modèle.</p></div></article>
   </div>
 </section>
 
@@ -663,6 +663,7 @@ function applyLang(l){
   $('#zin').setAttribute('aria-label',U('zin','Zoomer'));$('#zout').setAttribute('aria-label',U('zout','Dézoomer'));
   document.querySelectorAll('#langs .lb').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===LANG));
   renderExps();renderMeth(curL);renderFilters();
+  document.querySelectorAll('video[data-v]').forEach(v=>{const n=v.dataset.v+(LANG==='fr'?' fr':''),s='video '+n+'.mp4';if(v.dataset.cur!==s){v.dataset.cur=s;v.pause();v.poster='affiche '+n+'.jpg';v.src=s;v.setAttribute('aria-label',v.closest('.pcard').querySelector('h3').textContent)}});
   if(panelMode==='parcours')renderParcours();else if(curPlace){const tb=panel.querySelector('[data-tab][aria-selected=true]');renderPlace(curPlace,tb?+tb.dataset.tab:0)}else renderIndex();
   if(world)world.htmlElementsData(PLACES.map(p=>Object.assign({},p)));markPins();
   try{localStorage.setItem('lang',LANG)}catch(_){}
