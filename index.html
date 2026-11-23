@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Armel Kanhonou · Portfolio</title>
+<meta name="description" content="Armel Mahutin KANHONOU, épidémiologiste et data scientist en santé : climat et santé, surveillance épidémiologique, modélisation statistique sous R et Python. Projets, méthodes, codes et CV.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://armel-mahutin.github.io/">
+<meta property="og:title" content="Armel Mahutin KANHONOU · Épidémiologiste et data scientist en santé">
+<meta property="og:description" content="Globe interactif de mes travaux, méthodes et codes R et Python, projets reproductibles et CV.">
+<meta property="og:image" content="https://armel-mahutin.github.io/apercu.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://armel-mahutin.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
@@ -95,8 +105,21 @@ pre{margin:0;padding:14px;font:13px/1.6 "JetBrains Mono",ui-monospace,monospace;
 .cloud{display:flex;flex-wrap:wrap;gap:10px 12px}
 .skill{display:inline-flex;align-items:center;gap:9px;background:var(--tint2);border:1px solid var(--line);border-radius:50px;padding:9px 18px;font-weight:600;color:var(--primary);font-size:15px;transition:.15s}
 .skill .ic{color:var(--primary2)}.skill:hover{background:var(--primary);color:var(--card)}.skill:hover .ic{color:var(--accent)}
+.ed{display:flex;gap:14px;align-items:center;min-width:0}
+.logo{width:44px;height:44px;flex:none;border-radius:10px;background:#fff;border:1px solid var(--line);object-fit:contain;padding:6px}
+.logo.mono{display:grid;place-items:center;padding:0;font-weight:700;font-size:13px;color:var(--primary);background:var(--tint2)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:14px}
+.pcard{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--tint);display:flex;flex-direction:column}
+.pcard a.fig2{display:block;background:#fff;border-bottom:1px solid var(--line)}
+.pcard img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;padding:6px}
+.pcard .pb{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pcard h3{margin:0;font-size:16px;color:var(--ink)}
+.pcard p{margin:0;font-size:14px;color:var(--soft);line-height:1.5}
+.pcard .pk{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--primary2)}
+.pcard .plink{margin-top:auto;font-weight:700;font-size:14px;color:var(--primary);text-decoration:none}
+.pcard .plink:hover{text-decoration:underline}
 .rows{display:flex;flex-direction:column}
-.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 22px;align-items:baseline;border-bottom:1px dashed var(--line);padding:14px 0}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 22px;align-items:center;border-bottom:1px dashed var(--line);padding:14px 0}
 .row:last-child{border-bottom:0}
 .tag{background:var(--primary);color:var(--card);font-weight:700;padding:3px 14px;border-radius:40px;font-size:13px;justify-self:start;white-space:nowrap}
 .row b{font-size:17px;color:var(--ink)}.row small{display:block;color:var(--mut);font-size:14px;margin-top:2px}
@@ -117,6 +140,10 @@ pre{margin:0;padding:14px;font:13px/1.6 "JetBrains Mono",ui-monospace,monospace;
 [dir=rtl] .ctry{border-left:0;border-right:3px solid var(--accent);padding-left:0;padding-right:10px}
 [dir=rtl] .reg{margin:6px 13px 0 0}[dir=rtl] .hero::after{right:auto;left:-8%}
 [dir=rtl] pre,[dir=rtl] .fig{direction:ltr;text-align:left}[dir=rtl] .hero h1{letter-spacing:0}
+.pbtn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--primary);color:var(--card);border:0;border-radius:12px;padding:0 16px;min-height:44px;font-weight:600}
+.tl{list-style:none;margin:14px 0 0;padding:0;padding-inline-start:16px;border-inline-start:3px solid var(--accent);display:grid;gap:14px}
+.tl li{display:grid;gap:6px;justify-items:start}.tlb{width:100%;text-align:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;min-height:44px;display:grid;gap:2px}
+.tlb:hover{border-color:var(--accent)}.tlb small{color:var(--mut);font-size:13px}.tl .docs a{margin:0 6px 0 0}
 footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
 @media(max-width:900px){.stage{grid-template-columns:minmax(0,1fr)}.panel{height:auto}.fig{height:min(480px,70vh)}}
 @media(max-width:600px){.langs{position:static;margin-bottom:14px}.hero{padding-top:20px}.hero-content{flex-direction:column;align-items:flex-start;gap:20px}.avatar{width:120px;height:120px}.navwrap{position:relative}.nav{border-radius:24px}.row{grid-template-columns:minmax(0,1fr)}.hint{display:none}.fig{height:400px}}
@@ -165,6 +192,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
   <a href="#interventions"><svg class="ic"><use href="#i-globe"/></svg><span data-i18n="nLieux">Interventions</span></a>
   <a href="#experiences"><svg class="ic"><use href="#i-case"/></svg><span data-i18n="nExp">Expériences</span></a>
   <a href="#methodes"><svg class="ic"><use href="#i-code"/></svg><span data-i18n="nMeth">Méthodes</span></a>
+  <a href="#projets"><svg class="ic"><use href="#i-curve"/></svg><span data-i18n="nProj">Projets</span></a>
   <a href="#competences"><svg class="ic"><use href="#i-tools"/></svg><span data-i18n="nComp">Compétences</span></a>
   <a href="#formation"><svg class="ic"><use href="#i-cap"/></svg><span data-i18n="nForm">Formation</span></a>
   <a href="#engagement"><svg class="ic"><use href="#i-heart"/></svg><span data-i18n="nEng">Engagement</span></a>
@@ -174,7 +202,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
 <main class="container">
 <section class="card" id="profil">
   <h2 class="stitle"><span><svg class="ic"><use href="#i-user"/></svg></span><span data-i18n="tProfil">Profil</span></h2>
-  <p class="lead" data-i18n="lead">Épidémiologiste et data scientist en santé, je couvre toute la chaîne de la donnée : conception d'enquête, contrôle qualité, modélisation sous R et Python, rédaction scientifique. À l'unité <span class="hl">EPIMACT (Inserm – IRD)</span>, j'ai mis en évidence un signal thermique robuste sur les hospitalisations psychiatriques à La Réunion, à partir des bases PMSI, RPU et SNDS, et l'ai restitué à l'ARS. Formé au Bénin puis en France, je suis aujourd'hui en <span class="hl">Master 2 Data Science en Santé</span> à Lille et alternant chargé d'études santé-environnement à l'Espace Santé du Littoral.</p>
+  <p class="lead" data-i18n="lead">Épidémiologiste et data scientist en santé, je couvre toute la chaîne de la donnée : conception d'enquête, contrôle qualité, modélisation sous R et Python, rédaction scientifique. À l'unité <span class="hl">EPIMACT (Inserm – IRD)</span>, à partir d'agrégats mensuels mis à disposition par l'ARS La Réunion (PMSI-MCO, RPU, SNDS, Météo-France), j'ai montré qu'une hausse d'un écart-type de la température maximale est associée à +18,6 % de séjours hospitaliers avec un diagnostic psychiatrique (IC 95 % : +8 % à +30 %), et j'ai restitué ces résultats à l'ARS. Formé au Bénin puis en France, je suis aujourd'hui en <span class="hl">Master 2 Data Science en Santé</span> à Lille et alternant chargé d'études santé-environnement à l'Espace Santé du Littoral.</p>
 </section>
 
 <section class="card" id="interventions">
@@ -202,6 +230,19 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
   <div class="grid" id="meth"></div>
 </section>
 
+<section class="card" id="projets">
+  <h2 class="stitle"><span><svg class="ic"><use href="#i-curve"/></svg></span><span data-i18n="tProj">Résultats et projets reproductibles</span></h2>
+  <p data-i18n="projP">Un résultat réel issu de mon stage de recherche, et deux projets complets sur données simulées : le code, les figures et les analyses de sensibilité sont publics et se relancent en une commande.</p>
+  <div class="pgrid">
+    <article class="pcard"><a class="fig2" href="resultats%20reunion.png" target="_blank" rel="noopener"><img src="resultats%20reunion.png" alt="Graphique des risques relatifs de la chaleur sur la santé mentale à La Réunion" loading="lazy" width="1100" height="499"></a>
+      <div class="pb"><span class="pk" data-i18n="r1k">Résultat de recherche · EPIMACT</span><h3 data-i18n="r1t">Chaleur et santé mentale à La Réunion</h3><p data-i18n="r1p">Agrégats mensuels 2018–2023 fournis par l'ARS. Une hausse d'un écart-type de Tmax est associée à +18,6 % de séjours avec un diagnostic psychiatrique (IC 95 % : +8 % à +30 %), mais pas aux passages aux urgences ni aux délivrances de psychotropes. Étude écologique : association, pas causalité.</p><a class="plink" href="Memoire%20M1%20Armel%20Kanhonou.pdf" target="_blank" rel="noopener" data-i18n="r1l">Lire le mémoire (PDF) →</a></div></article>
+    <article class="pcard"><a class="fig2" href="projet%20dlnm.png" target="_blank" rel="noopener"><img src="projet%20dlnm.png" alt="Courbe exposition-réponse estimée par un modèle DLNM" loading="lazy" width="1100" height="688"></a>
+      <div class="pb"><span class="pk" data-i18n="r2k">Projet R · biostatistique</span><h3 data-i18n="r2t">Chaleur et admissions : modèle DLNM reproductible</h3><p data-i18n="r2p">Série journalière simulée avec un effet connu : le modèle quasi-Poisson à retards distribués le retrouve (RR au P99 : 1,14, IC 95 % 1,05–1,25, vrai effet 1,17). Neuf analyses de sensibilité et contrôle de l'autocorrélation.</p><a class="plink" href="https://github.com/Armel-Mahutin/chaleur-sante-dlnm" target="_blank" rel="noopener" data-i18n="r2l">Voir le code sur GitHub →</a></div></article>
+    <article class="pcard"><a class="fig2" href="projet%20prediction.png" target="_blank" rel="noopener"><img src="projet%20prediction.png" alt="Courbes ROC et de calibration des modèles de prédiction" loading="lazy" width="1100" height="460"></a>
+      <div class="pb"><span class="pk" data-i18n="r3k">Projet Python · apprentissage automatique</span><h3 data-i18n="r3t">Prédire la réhospitalisation à 30 jours</h3><p data-i18n="r3p">Régression logistique contre gradient boosting sur 6 000 séjours simulés : pipeline sans fuite de données, validation croisée, AUC avec IC bootstrap, calibration. Le modèle simple fait aussi bien (AUC 0,71 contre 0,70).</p><a class="plink" href="https://github.com/Armel-Mahutin/prediction-rehospitalisation" target="_blank" rel="noopener" data-i18n="r3l">Voir le code sur GitHub →</a></div></article>
+  </div>
+</section>
+
 <section class="card" id="competences">
   <h2 class="stitle"><span><svg class="ic"><use href="#i-tools"/></svg></span><span data-i18n="tComp">Compétences</span></h2>
   <h3 class="subh" data-i18n="subTools">Boîte à outils</h3>
@@ -219,13 +260,13 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
 <section class="card" id="formation">
   <h2 class="stitle"><span><svg class="ic"><use href="#i-cap"/></svg></span><span data-i18n="tForm">Formation et certifications</span></h2>
   <div class="rows">
-    <div class="row"><span class="tag">2026 – 2027</span><div><b data-i18n="f1b">Master 2 Data Science en Santé</b><small data-i18n="f1s">Université de Lille, en alternance</small></div></div>
-    <div class="row"><span class="tag">2025 – 2026</span><div><b data-i18n="f2b">Master 1 Santé publique, Transition épidémiologique et santé mondiale</b><small data-i18n="f2s">Université de Limoges</small></div></div>
-    <div class="row"><span class="tag">2022 – 2025</span><div><b data-i18n="f3b">Licence professionnelle Surveillance épidémiologique, mention Bien</b><small data-i18n="f3s">ENATSE, Université de Parakou (Bénin)</small></div></div>
-    <div class="row"><span class="tag">2019 – 2022</span><div><b data-i18n="f4b">Baccalauréat scientifique, série D</b><small data-i18n="f4s">Complexe Scolaire Sainte Félicité (Bénin)</small></div></div>
-    <div class="row"><span class="tag">2026</span><div><b data-i18n="f5b">Certified Data Scientist Associate</b><small data-i18n="f5s">DataCamp, certification de carrière</small></div></div>
-    <div class="row"><span class="tag">2024</span><div><b data-i18n="f6b">Introduction à la statistique avec R</b><small data-i18n="f6s">Université Paris-Saclay, FUN MOOC : biostatistique avec R, régressions linéaire et logistique</small></div></div>
-    <div class="row"><span class="tag">2026</span><div><b data-i18n="f7b">Cours DataCamp</b><small data-i18n="f7s">Introduction à Python, Introduction au SQL, SQL intermédiaire, Assembler des données en SQL</small></div></div>
+    <div class="row"><span class="tag">2026 – 2027</span><div class="ed"><img class="logo" src="https://www.google.com/s2/favicons?domain=univ-lille.fr&amp;sz=128" alt="Université de Lille" width="44" height="44" loading="lazy" onerror="this.outerHTML='&lt;span class=&quot;logo mono&quot; aria-hidden=&quot;true&quot;&gt;UL&lt;/span&gt;'"><div><b data-i18n="f1b">Master 2 Data Science en Santé</b><small data-i18n="f1s">Université de Lille, en alternance</small></div></div></div>
+    <div class="row"><span class="tag">2025 – 2026</span><div class="ed"><img class="logo" src="https://www.google.com/s2/favicons?domain=unilim.fr&amp;sz=128" alt="Université de Limoges" width="44" height="44" loading="lazy" onerror="this.outerHTML='&lt;span class=&quot;logo mono&quot; aria-hidden=&quot;true&quot;&gt;ULIM&lt;/span&gt;'"><div><b data-i18n="f2b">Master 1 Santé publique, Transition épidémiologique et santé mondiale</b><small data-i18n="f2s">Université de Limoges</small></div></div></div>
+    <div class="row"><span class="tag">2022 – 2025</span><div class="ed"><img class="logo" src="https://www.google.com/s2/favicons?domain=univ-parakou.bj&amp;sz=128" alt="Université de Parakou" width="44" height="44" loading="lazy" onerror="this.outerHTML='&lt;span class=&quot;logo mono&quot; aria-hidden=&quot;true&quot;&gt;UP&lt;/span&gt;'"><div><b data-i18n="f3b">Licence professionnelle Surveillance épidémiologique, mention Bien</b><small data-i18n="f3s">ENATSE, Université de Parakou (Bénin)</small></div></div></div>
+    <div class="row"><span class="tag">2019 – 2022</span><div class="ed"><span class="logo mono" aria-hidden="true">SF</span><div><b data-i18n="f4b">Baccalauréat scientifique, série D</b><small data-i18n="f4s">Complexe Scolaire Sainte Félicité (Bénin)</small></div></div></div>
+    <div class="row"><span class="tag">2026</span><div class="ed"><img class="logo" src="https://www.google.com/s2/favicons?domain=datacamp.com&amp;sz=128" alt="DataCamp" width="44" height="44" loading="lazy" onerror="this.outerHTML='&lt;span class=&quot;logo mono&quot; aria-hidden=&quot;true&quot;&gt;DC&lt;/span&gt;'"><div><b data-i18n="f5b">Certified Data Scientist Associate</b><small data-i18n="f5s">DataCamp, certification de carrière</small></div></div></div>
+    <div class="row"><span class="tag">2024</span><div class="ed"><img class="logo" src="https://www.google.com/s2/favicons?domain=universite-paris-saclay.fr&amp;sz=128" alt="Université Paris-Saclay" width="44" height="44" loading="lazy" onerror="this.outerHTML='&lt;span class=&quot;logo mono&quot; aria-hidden=&quot;true&quot;&gt;UPS&lt;/span&gt;'"><div><b data-i18n="f6b">Introduction à la statistique avec R</b><small data-i18n="f6s">Université Paris-Saclay, FUN MOOC : biostatistique avec R, régressions linéaire et logistique</small></div></div></div>
+    <div class="row"><span class="tag">2026</span><div class="ed"><img class="logo" src="https://www.google.com/s2/favicons?domain=datacamp.com&amp;sz=128" alt="DataCamp" width="44" height="44" loading="lazy" onerror="this.outerHTML='&lt;span class=&quot;logo mono&quot; aria-hidden=&quot;true&quot;&gt;DC&lt;/span&gt;'"><div><b data-i18n="f7b">Cours DataCamp</b><small data-i18n="f7s">Introduction à Python, Introduction au SQL, SQL intermédiaire, Assembler des données en SQL</small></div></div></div>
   </div>
 </section>
 
@@ -245,6 +286,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
     <a href="mailto:armelkanhonou1@gmail.com"><svg class="ic"><use href="#i-mail"/></svg><span><small data-i18n="mailLbl">E-mail</small>armelkanhonou1@gmail.com</span></a>
     <a href="https://www.linkedin.com/in/armelkanhonou"><svg class="ic"><use href="#i-link"/></svg><span><small>LinkedIn</small>armelkanhonou</span></a>
     <a href="https://github.com/Armel-Mahutin"><svg class="ic"><use href="#i-git"/></svg><span><small>GitHub</small>Armel-Mahutin</span></a>
+    <a href="https://orcid.org/0009-0005-1764-1327" target="_blank" rel="noopener"><svg class="ic"><use href="#i-award"/></svg><span><small>ORCID</small>0009-0005-1764-1327</span></a>
     <a href="CV%20Armel%20Kanhonou.pdf" target="_blank" rel="noopener"><svg class="ic"><use href="#i-case"/></svg><span><small>CV</small><span data-i18n="cvLink">Télécharger (PDF)</span></span></a>
   </div>
 </section>
@@ -263,20 +305,21 @@ const PLACES=[
  {id:'benin',name:'Échelle nationale',region:'Tout le pays',country:'Bénin',continent:'Afrique',lat:8.7,lng:2.75,alt:.6},
  {id:'reunion',name:'La Réunion',region:'Océan Indien',country:'France (outre-mer)',continent:'Afrique',lat:-21.12,lng:55.53,alt:.35},
  {id:'limoges',name:'Limoges',region:'Nouvelle-Aquitaine',country:'France',continent:'Europe',lat:45.83,lng:1.26,alt:.45},
+ {id:'saclay',name:'Paris-Saclay (en ligne)',region:'Île-de-France',country:'France',continent:'Europe',lat:48.71,lng:2.17,alt:.45},
  {id:'hdf',name:'Lille · Dunkerque',region:'Hauts-de-France',country:'France',continent:'Europe',lat:50.83,lng:2.72,alt:.45}
 ];
 const PROJ=[
  {id:'thermo',p:'reunion',type:'Recherche',year:'2026',title:'Chaleur et santé mentale à La Réunion (2018–2023)',
   role:"Stage de recherche de Master 1 à EPIMACT (Inserm U1094 / IRD U270), en partenariat avec l'ARS La Réunion. Encadrement : Dr Farid Boumediene, Dr Fabien Boux, Dr Thibaut Gellé.",
-  summary:"Étude observationnelle en séries temporelles mensuelles reliant les variations thermiques à quatre indicateurs de santé mentale : hospitalisations psychiatriques (PMSI-MCO), passages aux urgences (RPU), délivrances de psychotropes et mortalité.",
-  results:["Hospitalisations psychiatriques : +18,6 % par écart-type de Tmax (IRR = 1,19 ; IC 95 % 1,08–1,30 ; p < 0,001)","Effet maximal en été (IRR = 1,29 ; IC 95 % 1,09–1,52) et lors des mois de chaleur extrême, Tmax > P95 (IRR = 1,15 ; p = 0,038)","Association négative avec les passages aux urgences ; pas d'effet significatif sur les délivrances de psychotropes"],
+  summary:"Étude observationnelle en séries temporelles mensuelles reliant les variations thermiques à quatre indicateurs de santé mentale : séjours hospitaliers avec un diagnostic psychiatrique (PMSI-MCO), passages aux urgences psychiatriques (RPU), délivrances de psychotropes (SNDS) et mortalité. Données agrégées par mois, mises à disposition par l'ARS La Réunion ; étude écologique, qui ne permet pas de conclure à un lien causal.",
+  results:["Séjours avec diagnostic psychiatrique : +18,6 % par écart-type de Tmax (IRR = 1,19 ; IC 95 % 1,08–1,30 ; p < 0,001)","Effet maximal en été (IRR = 1,29 ; IC 95 % 1,09–1,52) et lors des mois de chaleur extrême, Tmax > P95 (IRR = 1,15 ; p = 0,038)","Association négative avec les passages aux urgences ; pas d'effet significatif sur les délivrances de psychotropes"],
   methods:["Données Météo-France (5 stations) et Heat Index, appariées aux données de santé","Anomalies standardisées (z-scores) et classes de percentiles","Corrélations de Spearman","Régressions quasi-Poisson ajustées sur la saisonnalité et la tendance, analyses par saison","Explorations par GAM et DLNM"],tools:['R'],code:['zscore','qp','spearman','gam','dlnm'],docs:[{t:'Mémoire de Master 1 (PDF, 36 pages)',u:'Memoire M1 Armel Kanhonou.pdf'}]},
  {id:'m1',p:'limoges',type:'Formation',year:'2025–2026',title:'Master 1 Santé publique, Université de Limoges',
-  role:"Parcours Transition épidémiologique et santé mondiale.",summary:"Biostatistique et modélisation, conception de bases de données (Epi Info, KoboCollect, R), investigation d'épidémies, éthique et droit de la santé. Le stage de recherche du M1 porte sur La Réunion : ouvrez ce point pour le détail.",methods:[],tools:['R','Epi Info','KoboCollect'],code:[]},
+  role:"Parcours Transition épidémiologique et santé mondiale.",summary:"Biostatistique et modélisation, conception de bases de données (Epi Info, KoboCollect, R), investigation d'épidémies, éthique et droit de la santé. Le stage de recherche du M1 porte sur La Réunion : ouvrez ce point pour le détail.",methods:[],tools:['R','Epi Info','KoboCollect'],code:[],docs:[{t:'Maquette du Master 1 Santé publique (PDF)',u:'https://unilim.fr/wp-content/uploads/DELIB CFVU ET DOSSIER MCCC 2023 2024//SANTE/Rglt et MCC M1_Sante_Publique 2024-2025.pdf'},{t:"Site de l'Université de Limoges",u:'https://www.unilim.fr'}]},
  {id:'spf',p:'limoges',type:'Engagement',year:'2026',title:'Service civique au Secours Populaire Français',
   role:'Pôle bénévolat, Limoges.',summary:"Organisation des équipes de bénévoles et de leur déploiement. Documentation de l'organisation en tableaux de référence pour quatre pôles : accès aux droits vitaux, éducation populaire, insertion, solidarité internationale.",methods:[],tools:[],code:[]},
  {id:'m2',p:'hdf',type:'Formation',year:'2026–2027',title:'Master 2 Data Science en Santé, Université de Lille',
-  role:'Étudiant.',summary:"Travaux de l'option Data versionnés sur GitHub (organisation Lille-Health-Data-Science). Conception de « Parcours DSS », une application d'apprentissage qui réunit les cours de M1 et de M2 avec une progression hiérarchisée.",methods:[],tools:['R','Python','SQL','Git / GitHub'],code:[],docs:[{t:'Dépôt GitHub de l’option Data',u:'https://github.com/Armel-Mahutin/kanhonou.armel.optiondata2026'},{t:'Profil GitHub',u:'https://github.com/Armel-Mahutin'}]},
+  role:'Étudiant.',summary:"Travaux de l'option Data versionnés sur GitHub (organisation Lille-Health-Data-Science). Conception de « Parcours DSS », une application d'apprentissage qui réunit les cours de M1 et de M2 avec une progression hiérarchisée.",methods:[],tools:['R','Python','SQL','Git / GitHub'],code:[],docs:[{t:'Plaquette du parcours Data Science en Santé (PDF)',u:'https://ufr3s.univ-lille.fr/fileufr3s/user_upload/ufr3s-formations/ingenierie/Master-SP-Parcours-DSS_2026-08-27.pdf'},{t:"Site de l'UFR3S, Université de Lille",u:'https://ufr3s.univ-lille.fr/formation-initiale'},{t:'Dépôt GitHub de l’option Data',u:'https://github.com/Armel-Mahutin/kanhonou.armel.optiondata2026'},{t:'Profil GitHub',u:'https://github.com/Armel-Mahutin'}]},
  {id:'esl',p:'hdf',type:'Alternance',year:'2026–2027',title:"Chargé d'études santé-environnement, Espace Santé du Littoral",
   role:"Alternant (contrat d'apprentissage), Dunkerque.",summary:"Poste d'alternance du Master 2, au croisement de la santé publique et de l'environnement.",methods:[],tools:[],code:[]},
  {id:'anx',p:'parakou',type:'Recherche',year:'2024–2025',title:"Anxiété chez les étudiants en sciences médicales et paramédicales, Université de Parakou",
@@ -293,6 +336,12 @@ const PROJ=[
   role:'Stagiaire en surveillance épidémiologique.',summary:"Participation à des enquêtes de terrain sur des épidémies locales, collecte et analyse de données épidémiologiques, contribution aux rapports et aux recommandations pour les interventions de santé publique.",methods:['Investigation de terrain','Collecte et analyse de données épidémiologiques','Rapports et recommandations'],tools:[],code:[]},
  {id:'chuas',p:'calavi',type:'Stage',year:'2023',title:'Stage professionnel, CHU de Zone AS',
   role:'Stagiaire en information sanitaire.',summary:"Planification et exécution d'activités de santé, collecte et analyse de données épidémiologiques, gestion de l'information sanitaire, contribution aux rapports et aux recommandations.",methods:['Gestion de l’information sanitaire','Indicateurs de morbidité, mortalité, incidence et prévalence'],tools:[],code:[]},
+ {id:'bac',p:'calavi',type:'Formation',year:'2019–2022',title:'Baccalauréat scientifique (série D), Complexe Scolaire Sainte Félicité',
+  role:'Enseignement secondaire, série scientifique.',summary:"Baccalauréat série D obtenu en 2022, puis entrée à l'ENATSE de l'Université de Parakou.",methods:[],tools:[],code:[]},
+ {id:'lp',p:'parakou',type:'Formation',year:'2022–2025',title:'Licence professionnelle Surveillance épidémiologique, ENATSE – Université de Parakou',
+  role:'Mention Bien.',summary:"École nationale de formation des techniciens supérieurs en santé publique et en surveillance épidémiologique : épidémiologie descriptive, analytique et d'investigation, surveillance, statistique inférentielle (17/20), méthodologie et éthique de la recherche, EpiData.",methods:[],tools:['EpiData'],code:[],docs:[{t:"Site de l'Université de Parakou",u:'http://www.univ-parakou.bj'}]},
+ {id:'mooc',p:'saclay',type:'Formation',year:'2024',title:'Introduction à la statistique avec R (MOOC)',
+  role:'Université Paris-Saclay, sur la plateforme FUN MOOC.',summary:"Statistique avec R, du descriptif aux modèles : tests, régressions linéaire et logistique, données de survie.",methods:[],tools:['R'],code:['prev','logit'],docs:[{t:'Page du cours sur FUN MOOC',u:'https://www.fun-mooc.fr/fr/cours/introduction-a-la-statistique-avec-r/'}]},
  {id:'cps',p:'benin',type:'Protocole',year:'',title:'Chimioprévention du paludisme saisonnier (CPS)',
   role:'Conception et présentation du protocole.',summary:"Protocole d'étude intégrant l'analyse de survie, le calcul de la taille d'échantillon et un budget prévisionnel.",methods:['Courbes de Kaplan-Meier','Modèle de Cox','Nombre d’événements par la formule de Schoenfeld'],tools:[],code:['survie','schoenfeld']},
  {id:'esp',p:'benin',type:'Engagement',year:'En création',title:'Epi Santé Project',
@@ -377,17 +426,31 @@ d <- d |>
            include.lowest = TRUE,
            labels = c("< P10", "P10-P90", "> P90")),
          classe = relevel(classe, ref = "P10-P90"))`},
- {id:'qp',lang:'R',name:'Régression quasi-Poisson en séries temporelles',desc:"Comptes mensuels selon l'exposition, ajustés sur la saison et la tendance ; effet exprimé en IRR.",code:`d$temps <- seq_len(nrow(d))
+ {id:'qp',lang:'R',name:'Régression quasi-Poisson en séries temporelles',desc:"Taux mensuels selon l'exposition, ajustés sur la saison et la tendance, avec contrôle de la surdispersion et de l'autocorrélation ; effet exprimé en IRR.",code:`d$temps <- seq_len(nrow(d))
 
-m <- glm(cas ~ tmax_z + factor(mois) + temps,
+# Offset : taille de la population, pour modéliser un taux plutôt qu'un compte
+m <- glm(cas ~ tmax_z + factor(mois) + temps + offset(log(pop)),
          family = quasipoisson, data = d)
 
-# IRR pour une hausse d'un écart-type de Tmax
+summary(m)$dispersion        # paramètre de surdispersion (phi > 1 ?)
+
+# IRR pour une hausse d'un écart-type de Tmax, IC 95 %
 round(exp(cbind(IRR = coef(m), confint.default(m)))["tmax_z", ], 3)
+
+# Autocorrélation résiduelle
+r <- residuals(m, type = "deviance")
+acf(r, main = "ACF des résidus de déviance")
+Box.test(r, lag = 12, type = "Ljung-Box")
+
+# Sensibilité : ajout du résidu décalé d'un mois
+d$r_l1 <- c(NA, head(r, -1))
+m_ar <- update(m, . ~ . + r_l1)
+round(exp(cbind(IRR = coef(m_ar), confint.default(m_ar)))["tmax_z", ], 3)
 
 # Analyse stratifiée par saison
 by(d, d$saison, function(s)
-  exp(coef(glm(cas ~ tmax_z + temps, family = quasipoisson, data = s)))["tmax_z"])`},
+  exp(coef(glm(cas ~ tmax_z + temps + offset(log(pop)),
+               family = quasipoisson, data = s)))["tmax_z"])`},
  {id:'gam',lang:'R',name:'Relation non linéaire par GAM',desc:"Forme de la relation exposition–santé et repérage d'un seuil.",code:`library(mgcv)
 
 m <- gam(cas ~ s(tmax, k = 5) + s(temps, k = 10),
@@ -432,7 +495,7 @@ nb_evenements(hr = 0.70)   # 247 événements`}
 
 const EXPS=[
  {b:'Santé-environnement',t:"Chargé d'études santé-environnement",o:'Espace Santé du Littoral',l:'Dunkerque',d:'2026 – 2027',x:"Alternance du Master 2 Data Science en Santé, au croisement de la santé publique et de l'environnement.",p:'hdf',i:'esl'},
- {b:'Climat et santé mentale',t:'Stagiaire de recherche en épidémiologie',o:'EPIMACT, Inserm U1094 – IRD U270',l:'Limoges · La Réunion',d:'Mars – juin 2026',x:"Séries temporelles 2018–2023 (PMSI-MCO, RPU, SNDS, mortalité, Météo-France) ; régressions quasi-Poisson sous R : +18,6 % d'hospitalisations psychiatriques par écart-type de Tmax.",p:'reunion',i:'thermo'},
+ {b:'Climat et santé mentale',t:'Stagiaire de recherche en épidémiologie',o:'EPIMACT, Inserm U1094 – IRD U270',l:'Limoges · La Réunion',d:'9 mars – 24 avril 2026',x:"Séries temporelles mensuelles 2018–2023 (agrégats ARS : PMSI-MCO, RPU, SNDS, mortalité ; Météo-France) ; régressions quasi-Poisson sous R : +18,6 % de séjours avec diagnostic psychiatrique par écart-type de Tmax (IRR 1,19 ; IC 95 % 1,08–1,30).",p:'reunion',i:'thermo'},
  {b:'Appui statistique',t:'Appui méthodologique et statistique',o:'Études de terrain en santé et en gestion',l:'Bénin, à distance',d:'2026',x:"Hépatite B et position sociale chez 453 donneurs de sang (Kouandé), performance des formations sanitaires (Parakou–N'Dali), PME de Parakou : collecte, Python et R.",p:'kouande',i:'hbv'},
  {b:'Santé mentale',t:'Investigateur principal, mémoire de Licence',o:'ENATSE, Université de Parakou',l:'Parakou',d:'2024 – 2025',x:"Enquête auprès de 438 étudiants en santé (KoboCollect, GAD-7) : 63,2 % d'anxiété ; régression logistique multinomiale. Mémoire noté 16/20.",p:'parakou',i:'anx'},
  {b:'Santé communautaire',t:'Diagnostic communautaire participatif',o:'Village de Vêdji',l:'Bénin',d:'2023 – 2024',x:"Consultation des habitants, priorisation des problèmes de santé par la méthode de Hanlon, stratégies d'intervention.",p:null},
@@ -467,13 +530,21 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if
 
 const panel=$('#panel');let curPlace=null;
 function renderIndex(){
-  curPlace=null;markPins();
+  panelMode='index';curPlace=null;markPins();
   const tree={};
   PLACES.forEach(p=>{const c=tree[p.continent]||(tree[p.continent]={});const k=c[p.country]||(c[p.country]={});(k[p.region]||(k[p.region]=[])).push(p)});
-  panel.innerHTML=`<div class="k">${esc(U('panelIntro','Continent › pays › région › ville. Cliquez sur un lieu ou un point du globe.'))}</div>`+Object.entries(tree).map(([ct,cs])=>`<div class="cont">${esc(W(ct))}</div>`+Object.entries(cs).map(([c,rs])=>`<div class="ctry">${esc(W(c))}</div>`+Object.entries(rs).map(([r,ps])=>`<div class="reg">${esc(W(r))}</div><ul class="plist">${ps.map(p=>{const pr=PROJ.filter(x=>x.p===p.id);
+  panel.innerHTML=`<button class="pbtn" data-parcours>${ic('cap')}${esc(U('parcours','Parcours académique'))}</button><div class="k" style="margin-top:12px">${esc(U('panelIntro','Continent › pays › région › ville. Cliquez sur un lieu ou un point du globe.'))}</div>`+Object.entries(tree).map(([ct,cs])=>`<div class="cont">${esc(W(ct))}</div>`+Object.entries(cs).map(([c,rs])=>`<div class="ctry">${esc(W(c))}</div>`+Object.entries(rs).map(([r,ps])=>`<div class="reg">${esc(W(r))}</div><ul class="plist">${ps.map(p=>{const pr=PROJ.filter(x=>x.p===p.id);
     return `<li><button data-place="${p.id}"><b>${esc(W(p.name))}</b><small>${pr.length} ${pr.length>1?U('works','travaux'):U('work','travail')} · ${esc([...new Set(pr.map(x=>W(x.type)))].join(', '))}</small></button></li>`}).join('')}</ul>`).join('')).join('')).join('');
 }
-function renderPlace(pid,idx=0){
+const docsHtml=j=>j.docs&&j.docs.length?`<div class="docs">${j.docs.map(d=>`<a href="${encodeURI(d.u)}" target="_blank" rel="noopener">${ic('case')}${esc(W(d.t))}</a>`).join('')}</div>`:'';
+const PARC=['bac','lp','mooc','m1','m2'];let panelMode='index';
+function renderParcours(){
+  panelMode='parcours';curPlace=null;markPins();
+  panel.innerHTML=`<button class="back" data-back>${esc(U('back','← Tous les lieux'))}</button><h3>${esc(U('parcours','Parcours académique'))}</h3><div class="k">${esc(U('parcoursIntro','Du baccalauréat au Master : cliquez sur une étape pour la voir sur le globe.'))}</div><ol class="tl">`+PARC.map(id=>{const j=P(PROJ.find(x=>x.id===id)),p=PLACES.find(x=>x.id===j.p);
+    return `<li><span class="badge">${esc(W(j.year))}</span><button class="tlb" data-goto="${id}"><b>${esc(j.title)}</b><small>${esc(W(p.name))} · ${esc(W(p.country))}</small></button>${docsHtml(j)}</li>`}).join('')+`</ol>`;
+  panel.scrollTop=0;
+}
+function renderPlace(pid,idx=0){panelMode='place';
   const p=PLACES.find(x=>x.id===pid),pr=PROJ.filter(x=>x.p===pid),j=P(pr[idx]);curPlace=pid;markPins();
   const list=(h,a)=>a&&a.length?`<div class="sec">${h}</div><ul>${a.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`:'';
   panel.innerHTML=`<button class="back" data-back>${esc(U('back','← Tous les lieux'))}</button><div class="crumb">${esc(W(p.continent))} › ${esc(W(p.country))} › ${esc(W(p.region))}</div><h3>${esc(W(p.name))}</h3>
@@ -482,11 +553,13 @@ function renderPlace(pid,idx=0){
    <h3>${esc(j.title)}</h3><p class="k">${esc(j.role)}</p><p>${esc(j.summary)}</p>
    ${list(U('res','Résultats clés'),j.results)}${list(U('meth','Méthodes'),j.methods)}
    ${j.tools.length?`<div class="sec">${U('tools','Outils')}</div><div class="pills">${j.tools.map(x=>`<span>${esc(W(x))}</span>`).join('')}</div>`:''}
-   ${j.docs&&j.docs.length?`<div class="sec">${U('docs','Documents')}</div><div class="docs">${j.docs.map(d=>`<a href="${encodeURI(d.u)}" target="_blank" rel="noopener">${ic('case')}${esc(W(d.t))}</a>`).join('')}</div>`:''}
+   ${j.docs&&j.docs.length?`<div class="sec">${U('docs','Documents')}</div>${docsHtml(j)}`:''}
    ${j.code.length?`<div class="sec">${U('code','Code générique associé')}</div>${j.code.map(c=>`<div class="k" style="margin-top:10px">${esc(Mn(byId[c]).name)}</div>${codeBlock(byId[c])}`).join('')}`:''}</div>`;
   panel.scrollTop=0;
 }
 panel.addEventListener('click',e=>{
+  if(e.target.closest('[data-parcours]')){renderParcours();reset();return}
+  const gt=e.target.closest('[data-goto]');if(gt){goProj(gt.dataset.goto);return}
   const pl=e.target.closest('[data-place]');if(pl){go(pl.dataset.place);return}
   if(e.target.closest('[data-back]')){renderIndex();reset();return}
   const tb=e.target.closest('[data-tab]');if(tb)renderPlace(curPlace,+tb.dataset.tab);
@@ -498,7 +571,7 @@ $('#exps').addEventListener('click',e=>{const b=e.target.closest('[data-goexp]')
 const gEl=$('#globe');let world=null;
 const HOME={lat:18,lng:18,altitude:2.3};
 function markPins(){document.querySelectorAll('.gpin').forEach(b=>b.classList.toggle('on',b.dataset.id===curPlace))}
-const ROUTE=[{a:[9.45,2.63],b:[45.83,1.26]},{a:[45.83,1.26],b:[50.83,2.72]},{a:[45.83,1.26],b:[-21.12,55.53]}];
+const ROUTE=[{a:[6.45,2.35],b:[9.45,2.63]},{a:[9.45,2.63],b:[45.83,1.26]},{a:[45.83,1.26],b:[50.83,2.72]},{a:[45.83,1.26],b:[-21.12,55.53]}];
 try{
   const G=window.Globe;
   try{world=new G(gEl,{animateIn:!reduce})}catch(_){world=G()(gEl)}
@@ -544,7 +617,7 @@ function applyLang(l){
   $('#zin').setAttribute('aria-label',U('zin','Zoomer'));$('#zout').setAttribute('aria-label',U('zout','Dézoomer'));
   document.querySelectorAll('#langs .lb').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===LANG));
   renderExps();renderMeth(curL);renderFilters();
-  if(curPlace){const tb=panel.querySelector('[data-tab][aria-selected=true]');renderPlace(curPlace,tb?+tb.dataset.tab:0)}else renderIndex();
+  if(panelMode==='parcours')renderParcours();else if(curPlace){const tb=panel.querySelector('[data-tab][aria-selected=true]');renderPlace(curPlace,tb?+tb.dataset.tab:0)}else renderIndex();
   if(world)world.htmlElementsData(PLACES.map(p=>Object.assign({},p)));markPins();
   try{localStorage.setItem('lang',LANG)}catch(_){}
   try{const u=new URL(location.href);if(LANG==='fr')u.searchParams.delete('lang');else u.searchParams.set('lang',LANG);history.replaceState(null,'',u)}catch(_){}
