@@ -108,7 +108,7 @@ pre{margin:0;padding:14px;font:13px/1.6 "JetBrains Mono",ui-monospace,monospace;
 .ed{display:flex;gap:14px;align-items:center;min-width:0}
 .logo{width:44px;height:44px;flex:none;border-radius:10px;background:#fff;border:1px solid var(--line);object-fit:contain;padding:6px}
 .logo.mono{display:grid;place-items:center;padding:0;font-weight:700;font-size:13px;color:var(--primary);background:var(--tint2)}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:14px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;margin-top:14px}
 .pcard{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--tint);display:flex;flex-direction:column}
 .pcard a.fig2{display:block;background:#fff;border-bottom:1px solid var(--line)}
 .pcard img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;padding:6px}
@@ -225,21 +225,23 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
 
 <section class="card" id="methodes">
   <h2 class="stitle"><span><svg class="ic"><use href="#i-code"/></svg></span><span data-i18n="tMeth">Méthodes et code</span></h2>
-  <div class="head"><p data-i18n="methP">Chaque méthode mobilisée sur le terrain, avec un code générique prêt à adapter. Ce sont des modèles de départ, pas les scripts originaux des études.</p>
+  <div class="head"><p data-i18n="methP">Chaque méthode mobilisée sur le terrain ou prévue dans un protocole, avec un code générique prêt à adapter. Ce sont des modèles de départ, pas les scripts originaux des études.</p>
     <div class="lf" id="lf"><button class="btn" aria-pressed="true" data-l="" data-i18n="all">Tout</button><button class="btn" aria-pressed="false" data-l="R">R</button><button class="btn" aria-pressed="false" data-l="Python">Python</button></div></div>
   <div class="grid" id="meth"></div>
 </section>
 
 <section class="card" id="projets">
   <h2 class="stitle"><span><svg class="ic"><use href="#i-curve"/></svg></span><span data-i18n="tProj">Résultats et projets reproductibles</span></h2>
-  <p data-i18n="projP">Un résultat réel issu de mon stage de recherche, et deux projets complets sur données simulées : le code, les figures et les analyses de sensibilité sont publics et se relancent en une commande.</p>
+  <p data-i18n="projP">Un résultat réel issu de mon stage de recherche, et trois projets complets, sur données simulées ou synthétiques (Synthea) : le code, les figures et les analyses de sensibilité sont publics et se relancent en une commande.</p>
   <div class="pgrid">
     <article class="pcard"><a class="fig2" href="resultats%20reunion.png" target="_blank" rel="noopener"><img src="resultats%20reunion.png" alt="Graphique des risques relatifs de la chaleur sur la santé mentale à La Réunion" loading="lazy" width="1100" height="499"></a>
-      <div class="pb"><span class="pk" data-i18n="r1k">Résultat de recherche · EPIMACT</span><h3 data-i18n="r1t">Chaleur et santé mentale à La Réunion</h3><p data-i18n="r1p">Agrégats mensuels 2018–2023 fournis par l'ARS. Une hausse d'un écart-type de Tmax est associée à +18,6 % de séjours avec un diagnostic psychiatrique (IC 95 % : +8 % à +30 %), mais pas aux passages aux urgences ni aux délivrances de psychotropes. Étude écologique : association, pas causalité.</p><a class="plink" href="Memoire%20M1%20Armel%20Kanhonou.pdf" target="_blank" rel="noopener" data-i18n="r1l">Lire le mémoire (PDF) →</a></div></article>
+      <div class="pb"><span class="pk" data-i18n="r1k">Résultat de recherche · EPIMACT</span><h3 data-i18n="r1t">Chaleur et santé mentale à La Réunion</h3><p data-i18n="r1p">Agrégats mensuels 2018–2023 fournis par l'ARS. Une hausse d'un écart-type de Tmax est associée à +18,6 % de séjours avec un diagnostic psychiatrique (IC 95 % : +8 % à +30 %), mais pas aux passages aux urgences ni aux délivrances de psychotropes. Trois indicateurs de chaleur, testés séparément, vont dans le même sens. Étude écologique : association, pas causalité.</p><a class="plink" href="Memoire%20M1%20Armel%20Kanhonou.pdf" target="_blank" rel="noopener" data-i18n="r1l">Lire le mémoire (PDF) →</a></div></article>
     <article class="pcard"><a class="fig2" href="projet%20dlnm.png" target="_blank" rel="noopener"><img src="projet%20dlnm.png" alt="Courbe exposition-réponse estimée par un modèle DLNM" loading="lazy" width="1100" height="688"></a>
       <div class="pb"><span class="pk" data-i18n="r2k">Projet R · biostatistique</span><h3 data-i18n="r2t">Chaleur et admissions : modèle DLNM reproductible</h3><p data-i18n="r2p">Série journalière simulée avec un effet connu : le modèle quasi-Poisson à retards distribués le retrouve (RR au P99 : 1,14, IC 95 % 1,05–1,25, vrai effet 1,17). Neuf analyses de sensibilité et contrôle de l'autocorrélation.</p><a class="plink" href="https://github.com/Armel-Mahutin/chaleur-sante-dlnm" target="_blank" rel="noopener" data-i18n="r2l">Voir le code sur GitHub →</a></div></article>
     <article class="pcard"><a class="fig2" href="projet%20prediction.png" target="_blank" rel="noopener"><img src="projet%20prediction.png" alt="Courbes ROC et de calibration des modèles de prédiction" loading="lazy" width="1100" height="460"></a>
       <div class="pb"><span class="pk" data-i18n="r3k">Projet Python · apprentissage automatique</span><h3 data-i18n="r3t">Prédire la réhospitalisation à 30 jours</h3><p data-i18n="r3p">Régression logistique contre gradient boosting sur 6 000 séjours simulés : pipeline sans fuite de données, validation croisée, AUC avec IC bootstrap, calibration. Le modèle simple fait aussi bien (AUC 0,71 contre 0,70).</p><a class="plink" href="https://github.com/Armel-Mahutin/prediction-rehospitalisation" target="_blank" rel="noopener" data-i18n="r3l">Voir le code sur GitHub →</a></div></article>
+    <article class="pcard"><a class="fig2" href="projet%20synthea.png" target="_blank" rel="noopener"><img src="projet%20synthea.png" alt="Courbes ROC et de calibration du modèle sur les données Synthea" loading="lazy" width="1100" height="460"></a>
+      <div class="pb"><span class="pk" data-i18n="r4k">Projet Python · données Synthea</span><h3 data-i18n="r4t">Risque d'hospitalisation ou d'urgences à 12 mois</h3><p data-i18n="r4p">3 058 adultes issus de dossiers médicaux synthétiques Synthea (MITRE) : variables mesurées avant la date de référence, AUC 0,66 (IC 95 % 0,61–0,71), calibration et équité par sexe et revenu. Le modèle surestime le risque chez les femmes : une recalibration serait nécessaire.</p><a class="plink" href="https://github.com/Armel-Mahutin/risque-hospitalisation-synthea" target="_blank" rel="noopener" data-i18n="r4l">Voir le code sur GitHub →</a></div></article>
   </div>
 </section>
 
@@ -324,7 +326,7 @@ const PROJ=[
   role:"Alternant (contrat d'apprentissage), Dunkerque.",summary:"Poste d'alternance du Master 2, au croisement de la santé publique et de l'environnement.",methods:[],tools:[],code:[]},
  {id:'anx',p:'parakou',type:'Recherche',year:'2024–2025',title:"Anxiété chez les étudiants en sciences médicales et paramédicales, Université de Parakou",
   role:"Mémoire de Licence professionnelle Surveillance épidémiologique, ENATSE (noté 16/20).",summary:"Enquête transversale auprès de 438 étudiants des trois entités de santé de l'université (participation de 95 %).",
-  results:["Prévalence de l'anxiété (GAD-7 ≥ 5) : 63,2 %","Anxiété légère 39,0 %, modérée 17,4 %, sévère 6,9 %"],
+  results:["Anxiété probable (GAD-7 ≥ 10, seuil de dépistage recommandé) : 24,3 %","Symptômes au moins légers (GAD-7 ≥ 5) : 63,2 %, dont légers 39,0 %, modérés 17,4 %, sévères 6,9 %"],
   methods:["Questionnaire électronique sous KoboCollect","Échelle GAD-7","Calcul de la taille d'échantillon (formule de Schwartz)","Régression logistique multinomiale des facteurs associés"],tools:['KoboCollect','Python'],code:['prev','multinom'],docs:[{t:'Dépôt GitHub de l’analyse (Python)',u:'https://github.com/Armel-Mahutin/analyse-anxiete-etudiants-parakou'}]},
  {id:'pme',p:'parakou',type:'Appui méthodologique',year:'2026',title:'Digitalisation de la comptabilité et performance des PME de Parakou',
   role:"Collecte de terrain et analyse statistique d'un mémoire de Master (UFR-SEG, Université de Parakou).",summary:"Participation à la collecte dans les arrondissements de Parakou, puis analyse sous forme de script R réutilisable, à la place d'un traitement sous SPSS.",methods:['Script d’analyse R reproductible'],tools:['R'],code:['desc']},
@@ -350,20 +352,31 @@ const PROJ=[
 const M=[
  {id:'prev',lang:'R',name:'Prévalence et IC à 95 %',desc:"Fréquence d'un événement binaire avec un intervalle de confiance exact (Clopper-Pearson).",code:`library(dplyr)
 
-res <- donnees |>
-  summarise(n = sum(!is.na(gad7)), cas = sum(gad7 >= 5, na.rm = TRUE))
-
-test <- binom.test(res$cas, res$n)
-sprintf("Prévalence : %.1f %% [IC 95 %% : %.1f – %.1f]",
-        100 * res$cas / res$n,
-        100 * test$conf.int[1], 100 * test$conf.int[2])`},
- {id:'multinom',lang:'R',name:'Régression logistique multinomiale',desc:"Facteurs associés à une issue à plusieurs niveaux, comme la sévérité de l'anxiété.",code:`library(nnet)
+# GAD-7 : le seuil de 10 est le seuil de dépistage recommandé (Spitzer, 2006) ;
+# le seuil de 5 ne repère que des symptômes au moins légers.
+prevalence <- function(seuil) {
+  res <- donnees |>
+    summarise(n = sum(!is.na(gad7)), cas = sum(gad7 >= seuil, na.rm = TRUE))
+  test <- binom.test(res$cas, res$n)
+  sprintf("GAD-7 >= %d : %.1f %% [IC 95 %% : %.1f – %.1f]", seuil,
+          100 * res$cas / res$n, 100 * test$conf.int[1], 100 * test$conf.int[2])
+}
+prevalence(10)   # anxiété probable (indicateur principal)
+prevalence(5)    # symptômes au moins légers`},
+ {id:'multinom',lang:'R',name:'Régression logistique multinomiale',desc:"Facteurs associés à une issue à plusieurs niveaux. L'issue étant ordonnée, on teste d'abord le modèle ordinal ; le multinomial est retenu si l'hypothèse des odds proportionnels est rejetée.",code:`library(nnet)
 
 # GAD-7 : 0-4 minimale, 5-9 légère, 10-14 modérée, 15-21 sévère
 d$gad7 <- rowSums(d[, paste0("gad", 1:7)])
 d$anxiete <- cut(d$gad7, c(-Inf, 4, 9, 14, Inf),
                  labels = c("minimale", "légère", "modérée", "sévère"))
 
+# 1) Issue ordonnée : modèle ordinal (odds proportionnels) en premier
+library(MASS)
+mo <- polr(anxiete ~ sexe + age + filiere + stress, data = d, Hess = TRUE)
+# brant::brant(mo) : si l'hypothèse des odds proportionnels est rejetée,
+# on passe au modèle multinomial, plus souple
+
+# 2) Modèle multinomial
 m <- multinom(anxiete ~ sexe + age + filiere + stress, data = d)
 z <- summary(m)$coefficients / summary(m)$standard.errors
 round(exp(coef(m)), 2)              # rapports de risques relatifs
@@ -399,7 +412,7 @@ manquants = df.isna().mean().sort_values(ascending=False)
 
 print(f"{len(df)} fiches, {len(hors_plage)} âges hors plage")
 print(manquants.head(10))`},
- {id:'logit',lang:'Python',name:'Régression logistique et odds ratios',desc:'Facteurs associés à une issue binaire, odds ratios ajustés et IC à 95 %.',code:`import numpy as np
+ {id:'logit',lang:'Python',name:'Régression logistique et odds ratios',desc:'Facteurs associés à une issue binaire : odds ratios ajustés, et rapports de prévalence (Poisson robuste) quand l’issue est fréquente.',code:`import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
 
@@ -413,7 +426,14 @@ ors = pd.DataFrame({
     "IC 97,5 %": ic[1],
     "p": m.pvalues,
 }).round(3)
-print(ors)`},
+print(ors)
+
+# Issue fréquente (> 10 %) : l'OR surestime le risque relatif.
+# Rapport de prévalence par régression de Poisson à variance robuste
+import statsmodels.api as sm
+pr = smf.glm("issue ~ C(classe_statut) + age + C(sexe)", data=df,
+             family=sm.families.Poisson()).fit(cov_type="HC0")
+print(np.exp(pr.params).round(3))`},
  {id:'zscore',lang:'R',name:'Anomalies standardisées et percentiles',desc:"Retirer la saisonnalité d'une exposition climatique, puis la classer en froid, normal et chaud.",code:`library(dplyr)
 
 d <- d |>
@@ -459,22 +479,27 @@ m <- gam(cas ~ s(tmax, k = 5) + s(temps, k = 10),
 summary(m)
 plot(m, select = 1, shade = TRUE,
      xlab = "Tmax (°C)", ylab = "Effet lissé (échelle log)")`},
- {id:'spearman',lang:'R',name:'Corrélation de Spearman',desc:'Association monotone entre deux séries, sans hypothèse de normalité.',code:`ct <- cor.test(d$tmax, d$cas, method = "spearman", exact = FALSE)
+ {id:'spearman',lang:'R',name:'Corrélation de Spearman',desc:'Association monotone entre deux séries, en exploration seulement : sur des séries temporelles, le p-value n’est pas valide car les observations successives ne sont pas indépendantes.',code:`# Exploration seulement : sur des séries temporelles, les observations
+# successives ne sont pas indépendantes, donc le p-value n'est pas valide.
+# Pour tester l'association, utiliser la régression quasi-Poisson.
+ct <- cor.test(d$tmax, d$cas, method = "spearman", exact = FALSE)
 sprintf("rho = %.2f ; p = %.3f", ct$estimate, ct$p.value)`},
- {id:'dlnm',lang:'R',name:'Exposition décalée (DLNM)',desc:"Effets retardés et non linéaires de la chaleur sur des données journalières.",code:`library(dlnm)
+ {id:'dlnm',lang:'R',name:'Exposition décalée (DLNM)',desc:"Effets retardés et non linéaires de la chaleur sur des données journalières (décalages de 0 à 7 jours, 14 et 21 en sensibilité).",code:`library(dlnm)
 library(splines)
 
 n_annees <- length(unique(format(d$date, "%Y")))
-cb <- crossbasis(d$tmax, lag = 21,
+# Chaleur : effets surtout immédiats, décalages de 0 à 7 jours
+# (14 et 21 jours en analyse de sensibilité)
+cb <- crossbasis(d$tmax, lag = 7,
                  argvar = list(fun = "ns", df = 3),
-                 arglag = list(fun = "ns", knots = logknots(21, 3)))
+                 arglag = list(fun = "ns", knots = logknots(7, 2)))
 
 m <- glm(cas ~ cb + ns(temps, df = 7 * n_annees) + factor(jour_semaine),
          family = quasipoisson, data = d)
 
 pred <- crosspred(cb, m, cen = median(d$tmax, na.rm = TRUE), by = 0.5)
-plot(pred, "overall", xlab = "Tmax (°C)", ylab = "RR cumulé (lag 0–21)")`},
- {id:'survie',lang:'R',name:'Kaplan-Meier et modèle de Cox',desc:"Courbes de survie, test du log-rank, hazard ratios et vérification des risques proportionnels.",code:`library(survival)
+plot(pred, "overall", xlab = "Tmax (°C)", ylab = "RR cumulé (lag 0–7)")`},
+ {id:'survie',lang:'R',name:'Kaplan-Meier et modèle de Cox',desc:"Prévu dans un protocole : courbes de survie, test du log-rank, hazard ratios et vérification des risques proportionnels.",code:`library(survival)
 
 km <- survfit(Surv(temps, evenement) ~ bras, data = d)
 plot(km, col = c("#3f7f86", "#d98c74"),
@@ -484,7 +509,7 @@ survdiff(Surv(temps, evenement) ~ bras, data = d)   # log-rank
 cox <- coxph(Surv(temps, evenement) ~ bras + age, data = d)
 summary(cox)     # HR = exp(coef)
 cox.zph(cox)     # risques proportionnels`},
- {id:'schoenfeld',lang:'R',name:'Nombre d’événements (Schoenfeld)',desc:"Événements nécessaires pour détecter un hazard ratio donné.",code:`nb_evenements <- function(hr, alpha = 0.05, puissance = 0.80, p = 0.5) {
+ {id:'schoenfeld',lang:'R',name:'Nombre d’événements (Schoenfeld)',desc:"Prévu dans un protocole : nombre d’événements nécessaires pour détecter un hazard ratio donné.",code:`nb_evenements <- function(hr, alpha = 0.05, puissance = 0.80, p = 0.5) {
   # p : proportion de sujets dans le bras exposé
   ceiling((qnorm(1 - alpha / 2) + qnorm(puissance))^2 /
             (p * (1 - p) * log(hr)^2))
@@ -497,7 +522,7 @@ const EXPS=[
  {b:'Santé-environnement',t:"Chargé d'études santé-environnement",o:'Espace Santé du Littoral',l:'Dunkerque',d:'2026 – 2027',x:"Alternance du Master 2 Data Science en Santé, au croisement de la santé publique et de l'environnement.",p:'hdf',i:'esl'},
  {b:'Climat et santé mentale',t:'Stagiaire de recherche en épidémiologie',o:'EPIMACT, Inserm U1094 – IRD U270',l:'Limoges · La Réunion',d:'9 mars – 24 avril 2026',x:"Séries temporelles mensuelles 2018–2023 (agrégats ARS : PMSI-MCO, RPU, SNDS, mortalité ; Météo-France) ; régressions quasi-Poisson sous R : +18,6 % de séjours avec diagnostic psychiatrique par écart-type de Tmax (IRR 1,19 ; IC 95 % 1,08–1,30).",p:'reunion',i:'thermo'},
  {b:'Appui statistique',t:'Appui méthodologique et statistique',o:'Études de terrain en santé et en gestion',l:'Bénin, à distance',d:'2026',x:"Hépatite B et position sociale chez 453 donneurs de sang (Kouandé), performance des formations sanitaires (Parakou–N'Dali), PME de Parakou : collecte, Python et R.",p:'kouande',i:'hbv'},
- {b:'Santé mentale',t:'Investigateur principal, mémoire de Licence',o:'ENATSE, Université de Parakou',l:'Parakou',d:'2024 – 2025',x:"Enquête auprès de 438 étudiants en santé (KoboCollect, GAD-7) : 63,2 % d'anxiété ; régression logistique multinomiale. Mémoire noté 16/20.",p:'parakou',i:'anx'},
+ {b:'Santé mentale',t:'Investigateur principal, mémoire de Licence',o:'ENATSE, Université de Parakou',l:'Parakou',d:'2024 – 2025',x:"Enquête auprès de 438 étudiants en santé (KoboCollect, GAD-7) : 24,3 % d'anxiété probable (score ≥ 10) et 63,2 % avec des symptômes au moins légers ; régression logistique multinomiale. Mémoire noté 16/20.",p:'parakou',i:'anx'},
  {b:'Santé communautaire',t:'Diagnostic communautaire participatif',o:'Village de Vêdji',l:'Bénin',d:'2023 – 2024',x:"Consultation des habitants, priorisation des problèmes de santé par la méthode de Hanlon, stratégies d'intervention.",p:null},
  {b:'Investigation de terrain',t:'Stage académique',o:'Hôpital de Zone de Dassa-Glazoué',l:'Bénin',d:'2024',x:"Enquêtes de terrain sur des épidémies locales, collecte et analyse de données épidémiologiques, rapports et recommandations de santé publique.",p:'dassa',i:'dassa'},
  {b:'Information sanitaire',t:'Stage professionnel',o:'CHU de Zone AS',l:'Bénin',d:'2023',x:"Planification et exécution d'activités de santé, collecte et analyse de données épidémiologiques, gestion de l'information sanitaire.",p:'calavi',i:'chuas'}
